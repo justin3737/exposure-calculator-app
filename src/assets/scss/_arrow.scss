@@ -1,0 +1,45 @@
+@import "compass/css3";
+@import "color";
+/* arrow scss */
+
+.btn-arrow {
+	background-color: white;
+	border-radius: 50%;
+	position: relative;
+	opacity: 0.9;
+
+	&:before {
+		content:"";
+		position: absolute;
+		width: 16px;
+		height: 16px;
+		border-top:2px solid $bg;
+		border-right:2px solid $bg;
+	};
+
+	&:hover {
+		transform: scale(1.2);
+		opacity: 1;
+	}
+
+	&.is-disabled {
+        cursor: default;
+		opacity: 0.3;
+	}
+
+	&.is-disabled:hover {
+		transform: scale(1);
+	}
+}
+
+.btn-arrow.arrow-left:before {
+	transform: rotate(-135deg);
+	top: 13px;
+    left: 15px;
+}
+
+.btn-arrow.arrow-right:before {
+	transform: rotate(45deg);
+	top: 13px;
+    left: 10px;
+}

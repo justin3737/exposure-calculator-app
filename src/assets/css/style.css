@@ -1,0 +1,113 @@
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed,
+figure, figcaption, footer, header, hgroup,
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font: inherit;
+  font-size: 100%;
+  vertical-align: baseline;
+}
+
+html {
+  line-height: 1;
+}
+
+ol, ul {
+  list-style: none;
+}
+
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+
+caption, th, td {
+  text-align: left;
+  font-weight: normal;
+  vertical-align: middle;
+}
+
+q, blockquote {
+  quotes: none;
+}
+q:before, q:after, blockquote:before, blockquote:after {
+  content: "";
+  content: none;
+}
+
+a img {
+  border: none;
+}
+
+article, aside, details, figcaption, figure, footer, header, hgroup, main, menu, nav, section, summary {
+  display: block;
+}
+
+/* arrow scss */
+.btn-arrow {
+  background-color: white;
+  border-radius: 50%;
+  position: relative;
+  opacity: 0.9;
+}
+.btn-arrow:before {
+  content: "";
+  position: absolute;
+  width: 16px;
+  height: 16px;
+  border-top: 2px solid #cc458d;
+  border-right: 2px solid #cc458d;
+}
+.btn-arrow:hover {
+  transform: scale(1.2);
+  opacity: 1;
+}
+.btn-arrow.is-disabled {
+  cursor: default;
+  opacity: 0.3;
+}
+.btn-arrow.is-disabled:hover {
+  transform: scale(1);
+}
+
+.btn-arrow.arrow-left:before {
+  transform: rotate(-135deg);
+  top: 13px;
+  left: 15px;
+}
+
+.btn-arrow.arrow-right:before {
+  transform: rotate(45deg);
+  top: 13px;
+  left: 10px;
+}
+
+html {
+  width: 100%;
+  height: 100%;
+}
+
+body {
+  background-color: #cc458d;
+  background: -webkit-linear-gradient(to bottom, #cc3083, #cc458d);
+  /* Chrome 10-25, Safari 5.1-6 */
+  background: linear-gradient(to bottom, #cc3083, #cc458d);
+  /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+}
+
+.btn {
+  width: 44px;
+  height: 44px;
+  display: inline-block;
+}
