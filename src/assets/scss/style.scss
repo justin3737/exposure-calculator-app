@@ -9,15 +9,17 @@ html {
 }
 
 body {
-    background-color: $bg;
-    background: -webkit-linear-gradient(to bottom, $bg-darker, $bg); /* Chrome 10-25, Safari 5.1-6 */
-    background: linear-gradient(to bottom, $bg-darker, $bg); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+    background: darken($bg, 25%);
 }
 
 #app-wrap {
-    margin: 20px;
+    padding: 20px;
+    margin: 30px auto;
     width: auto;
     max-width: 320px;
+    background-color: $bg;
+    background: -webkit-linear-gradient(to bottom, $bg-darker, $bg); /* Chrome 10-25, Safari 5.1-6 */
+    background: linear-gradient(to bottom, $bg-darker, $bg); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
 }
     
     .scroll-wrap {
