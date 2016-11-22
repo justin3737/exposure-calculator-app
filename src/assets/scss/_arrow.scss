@@ -4,9 +4,9 @@
 
 .btn-arrow {
 	background-color: white;
-	border-radius: 50%;
 	position: relative;
-	opacity: 0.9;
+	@include border-radius(50%);
+	@include opacity(0.9);
 
 	&:before {
 		content:"";
@@ -19,12 +19,12 @@
 
 	&:hover, &.is-active {
 		transform: scale(1.2);
-		opacity: 1;
+		@include opacity(1);
 	}
 
 	&.is-disabled {
         cursor: default;
-		opacity: 0.3;
+		@include opacity(0.3);
 	}
 
 	&.is-disabled:hover {

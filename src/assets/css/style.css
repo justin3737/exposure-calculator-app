@@ -1,3 +1,4 @@
+@charset "UTF-8";
 html, body, div, span, applet, object, iframe,
 h1, h2, h3, h4, h5, h6, p, blockquote, pre,
 a, abbr, acronym, address, big, cite, code,
@@ -57,8 +58,11 @@ article, aside, details, figcaption, figure, footer, header, hgroup, main, menu,
 /* arrow scss */
 .btn-arrow {
   background-color: white;
-  border-radius: 50%;
   position: relative;
+  -moz-border-radius: 50%;
+  -webkit-border-radius: 50%;
+  border-radius: 50%;
+  filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=90);
   opacity: 0.9;
 }
 .btn-arrow:before {
@@ -71,10 +75,12 @@ article, aside, details, figcaption, figure, footer, header, hgroup, main, menu,
 }
 .btn-arrow:hover, .btn-arrow.is-active {
   transform: scale(1.2);
+  filter: progid:DXImageTransform.Microsoft.Alpha(enabled=false);
   opacity: 1;
 }
 .btn-arrow.is-disabled {
   cursor: default;
+  filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=30);
   opacity: 0.3;
 }
 .btn-arrow.is-disabled:hover {
@@ -106,6 +112,39 @@ body {
   /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
 }
 
+#app-wrap {
+  margin: 20px;
+  width: auto;
+  max-width: 320px;
+}
+
+.scroll-wrap {
+  padding: 20px 0;
+}
+
+.control-wrap {
+  display: flex;
+  flex-direction: row;
+}
+.control-wrap .btn {
+  margin-top: 3px;
+}
+.control-wrap .touchcarousel-container {
+  flex: 1;
+}
+.control-wrap .item {
+  width: 100%;
+  text-align: center;
+}
+
+.header {
+  margin-top: 30px;
+}
+
+.footer {
+  margin-top: 30px;
+}
+
 .btn {
   width: 44px;
   height: 44px;
@@ -119,29 +158,37 @@ body {
   border: 2px solid white;
   color: white;
   text-align: center;
-  line-height: 58px;
+  line-height: 55px;
   font-size: 24px;
   letter-spacing: -1px;
   text-transform: uppercase;
+  -moz-box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+  -moz-border-radius: 45px;
+  -webkit-border-radius: 45px;
+  border-radius: 45px;
 }
 .btn-full:hover {
   color: #cc458d;
   background-color: white;
 }
 
-div {
+li.item {
   font-size: 50px;
   font-family: century gothic;
   color: white;
 }
 
 i.time {
+  margin: 0 auto;
   display: block;
   text-indent: -9999px;
   width: 120px;
   height: 120px;
   background: url(../img/time.png);
   background-size: 120px;
+  filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=30);
   opacity: 0.3;
 }
 
@@ -151,8 +198,10 @@ h1 {
 }
 
 h2 {
-  font-family: ariel;
+  font-family: verdana,"微軟正黑體";
   font-size: 14px;
   line-height: 24px;
   color: white;
+  text-transform: uppercase;
+  letter-spacing: -1px;
 }

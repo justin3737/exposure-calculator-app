@@ -1,67 +1,108 @@
-@import "compass/reset";
+﻿@import "compass/reset";
 @import "compass/css3";
 @import "color";
 @import "arrow";
 
 html {
-	width: 100%;
-	height: 100%;
+    width: 100%;
+    height: 100%;
 }
 
 body {
-	background-color: $bg;
-	background: -webkit-linear-gradient(to bottom, $bg-darker, $bg); /* Chrome 10-25, Safari 5.1-6 */
-	background: linear-gradient(to bottom, $bg-darker, $bg); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+    background-color: $bg;
+    background: -webkit-linear-gradient(to bottom, $bg-darker, $bg); /* Chrome 10-25, Safari 5.1-6 */
+    background: linear-gradient(to bottom, $bg-darker, $bg); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
 }
 
-.btn {
-	width: 44px;
-	height: 44px;
-	display: inline-block;
-	text-decoration: none;
+#app-wrap {
+    margin: 20px;
+    width: auto;
+    max-width: 320px;
 }
+    
+    .scroll-wrap {
+        padding: 20px 0;
+    }
 
-.btn-full {
-	width: 100%;
-	height: 55px;
-	border:2px solid $white;
-	color:$white;
-	text-align: center;
-    line-height: 58px;
-    font-size: 24px;
-    letter-spacing: -1px;
-    text-transform: uppercase;
+    .control-wrap {
+        display: flex;
+        flex-direction: row;
 
-    &:hover {
-    	color: $bg;
-    	background-color: $white;
-    };
-}
+        & .btn {
+            margin-top: 3px;
+        }
 
-div {
-	font-size: 50px;
-    font-family: century gothic;
-    color: $white;
-}
+        & .touchcarousel-container {
+            flex:1;
+        }
 
-i.time {
-  display: block;
-  text-indent: -9999px;
-  width: 120px;
-  height: 120px;
-  background: url(../img/time.png);
-  background-size: 120px;
-  opacity: 0.3
-}
+        & .item {
+            width: 100%;
+            text-align: center;
+        }
+    }
+    
+    .header {
+        margin-top: 30px;
+    }
 
-h1 {
-	text-indent: -1000px;
-	position: absolute;
-}
+    .footer {
+        margin-top: 30px;
+    }
 
-h2 {
-	font-family: ariel;
-	font-size: 14px;
-	line-height: 24px;
-	color:$white;
-}
+    .btn {
+        width: 44px;
+        height: 44px;
+        display: inline-block;
+        text-decoration: none;
+    }
+
+    .btn-full {
+        width: 100%;
+        height: 55px;
+        border:2px solid $white;
+        color:$white;
+        text-align: center;
+        line-height: 55px;
+        font-size: 24px;
+        letter-spacing: -1px;
+        text-transform: uppercase;
+        @include box-sizing(border-box);
+        @include border-radius(45px);
+
+        &:hover {
+            color: $bg;
+            background-color: $white;
+        };
+    }
+
+    li.item {
+        font-size: 50px;
+        font-family: century gothic;
+        color: $white;
+    }
+
+    i.time {
+        margin: 0 auto;
+        display: block;
+        text-indent: -9999px;
+        width: 120px;
+        height: 120px;
+        background: url(../img/time.png);
+        background-size: 120px;
+        @include opacity(0.3);
+    }
+
+    h1 {
+        text-indent: -1000px;
+        position: absolute;
+    }
+
+    h2 {
+        font-family: verdana,"微軟正黑體";
+        font-size: 14px;
+        line-height: 24px;
+        color:$white;
+        text-transform: uppercase;
+        letter-spacing: -1px;
+    }
