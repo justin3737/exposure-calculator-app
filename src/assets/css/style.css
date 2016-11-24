@@ -68,10 +68,10 @@ article, aside, details, figcaption, figure, footer, header, hgroup, main, menu,
 .btn-arrow:before {
   content: "";
   position: absolute;
-  width: 16px;
-  height: 16px;
-  border-top: 2px solid #cc458d;
-  border-right: 2px solid #cc458d;
+  width: 13px;
+  height: 13px;
+  border-top: 2px solid #ED3F95;
+  border-right: 2px solid #ED3F95;
 }
 .btn-arrow:hover, .btn-arrow.is-active {
   transform: scale(1.2);
@@ -89,14 +89,14 @@ article, aside, details, figcaption, figure, footer, header, hgroup, main, menu,
 
 .btn-arrow.arrow-left:before {
   transform: rotate(-135deg);
-  top: 13px;
-  left: 15px;
+  top: 15px;
+  left: 17px;
 }
 
 .btn-arrow.arrow-right:before {
   transform: rotate(45deg);
-  top: 13px;
-  left: 10px;
+  top: 15px;
+  left: 11px;
 }
 
 html {
@@ -105,19 +105,16 @@ html {
 }
 
 body {
-  background: #721f4c;
+  background: #9e0f55;
 }
 
 #app-wrap {
   padding: 20px;
-  margin: 30px auto;
+  margin: 0 auto;
   width: auto;
   max-width: 320px;
-  background-color: #cc458d;
-  background: -webkit-linear-gradient(to bottom, #cc3083, #cc458d);
-  /* Chrome 10-25, Safari 5.1-6 */
-  background: linear-gradient(to bottom, #cc3083, #cc458d);
-  /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+  background-color: #ED3F95;
+  background-image: linear-gradient(-1deg, rgba(237, 63, 149, 0.87) 0%, rgba(216, 13, 121, 0.9) 85%);
 }
 
 .scroll-wrap {
@@ -140,11 +137,11 @@ body {
 }
 
 .header {
-  margin-top: 30px;
+  margin-top: 20px;
 }
 
 .footer {
-  margin-top: 30px;
+  padding: 10px 0;
 }
 
 .btn {
@@ -172,13 +169,13 @@ body {
   border-radius: 45px;
 }
 .btn-full:hover {
-  color: #cc458d;
+  color: #ED3F95;
   background-color: white;
 }
 
 li.item {
   font-size: 50px;
-  font-family: century gothic;
+  font-family: AppleGothic;
   color: white;
 }
 
@@ -200,10 +197,9 @@ h1 {
 }
 
 h2 {
-  font-family: verdana,"微軟正黑體";
+  font-family: AppleGothic,"微軟正黑體";
   font-size: 14px;
   line-height: 24px;
   color: white;
   text-transform: uppercase;
-  letter-spacing: -1px;
 }

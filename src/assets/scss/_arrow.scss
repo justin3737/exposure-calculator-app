@@ -11,8 +11,8 @@
 	&:before {
 		content:"";
 		position: absolute;
-		width: 16px;
-		height: 16px;
+		width: 13px;
+		height: 13px;
 		border-top:2px solid $bg;
 		border-right:2px solid $bg;
 	};
@@ -34,12 +34,12 @@
 
 .btn-arrow.arrow-left:before {
 	transform: rotate(-135deg);
-	top: 13px;
-    left: 15px;
+	top: 15px;
+    left: 17px;
 }
 
 .btn-arrow.arrow-right:before {
 	transform: rotate(45deg);
-	top: 13px;
-    left: 10px;
+	top: 15px;
+    left: 11px;
 }
