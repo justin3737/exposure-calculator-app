@@ -1,0 +1,48 @@
+@import 'compass/css3';
+
+@media only screen 
+and (min-device-width : 320px) 
+and (max-device-width : 376px) {
+    .container {
+        max-width:100%;
+    }
+}
+
+/* iPhone 6 / 6plus */
+@media only screen 
+and (min-device-width : 375px) 
+and (max-device-width : 736px) { 
+    .container {
+        max-width:100%;
+    }
+    .btn {
+        @include scale(1.2);
+    }
+        .arrow-left {
+            @include transform-origin(left,top);
+        }
+        .arrow-right {
+            @include transform-origin(right,top);
+        }
+    .btn-full {
+        @include scale(1);
+    }
+}
+
+@media only screen 
+and (orientation: landscape) {
+    .container {
+        max-width:320px;
+    }
+}
+
+/* iPad and web */
+@media only screen 
+and (min-device-width : 737px) { 
+    .container {
+        max-width: 320px;
+        max-height: 600px;
+        top: 50%;
+        margin-top: -300px !important ; 
+    }
+}

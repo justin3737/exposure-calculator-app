@@ -1,0 +1,19 @@
+{
+  "name": "exposure-calculator-app",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.html",
+  "scripts": {
+    "deploy": "npm run build&&gh-pages -d build"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/justin3737/exposure-calculator-app.git"
+  },
+  "author": "Justin Wu",
+  "license": "MIT",
+  "homepage": "https://justin3737.github.io/exposure-calculator-app",
+  "devDependencies": {
+    "gh-pages": "^0.12.0"
+  }
+}

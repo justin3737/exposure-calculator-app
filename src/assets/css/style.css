@@ -102,31 +102,37 @@ article, aside, details, figcaption, figure, footer, header, hgroup, main, menu,
 html {
   width: 100%;
   height: 100%;
+  font-size: 100%;
 }
 
 body {
   background: #9e0f55;
+  width: 100%;
+  height: 100%;
 }
 
 #app-wrap {
+  position: relative;
   padding: 20px;
   margin: 0 auto;
-  width: auto;
-  max-width: 320px;
+  width: 100%;
+  height: 100%;
   background-color: #ED3F95;
   background-image: linear-gradient(-1deg, rgba(237, 63, 149, 0.87) 0%, rgba(216, 13, 121, 0.9) 85%);
+  -moz-box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
 }
 
 .scroll-wrap {
   padding: 20px 0;
+  height: 15%;
 }
 
 .control-wrap {
   display: flex;
   flex-direction: row;
-}
-.control-wrap .btn {
-  margin-top: 3px;
+  align-items: baseline;
 }
 .control-wrap .touchcarousel-container {
   flex: 1;
@@ -137,11 +143,19 @@ body {
 }
 
 .header {
-  margin-top: 20px;
+  padding-top: 10px;
+  height: 20%;
 }
 
 .footer {
-  padding: 10px 0;
+  padding: 1.250em;
+  left: 0;
+  bottom: 0px;
+  position: absolute;
+  width: 100%;
+  -moz-box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
 }
 
 .btn {
@@ -157,8 +171,8 @@ body {
   border: 2px solid white;
   color: white;
   text-align: center;
-  line-height: 55px;
-  font-size: 24px;
+  line-height: 2.2em;
+  font-size: 1.5em;
   letter-spacing: -1px;
   text-transform: uppercase;
   -moz-box-sizing: border-box;
@@ -174,7 +188,7 @@ body {
 }
 
 li.item {
-  font-size: 50px;
+  font-size: 3.125em;
   font-family: AppleGothic;
   color: white;
 }
@@ -192,14 +206,68 @@ i.time {
 }
 
 h1 {
-  text-indent: -1000px;
+  display: none;
   position: absolute;
 }
 
 h2 {
   font-family: AppleGothic,"微軟正黑體";
-  font-size: 14px;
-  line-height: 24px;
+  font-size: 0.875em;
+  line-height: 1.5rem;
   color: white;
   text-transform: uppercase;
+}
+
+@media only screen and (min-device-width: 320px) and (max-device-width: 376px) {
+  .container {
+    max-width: 100%;
+  }
+}
+/* iPhone 6 / 6plus */
+@media only screen and (min-device-width: 375px) and (max-device-width: 736px) {
+  .container {
+    max-width: 100%;
+  }
+
+  .btn {
+    -moz-transform: scale(1.2, 1.2);
+    -ms-transform: scale(1.2, 1.2);
+    -webkit-transform: scale(1.2, 1.2);
+    transform: scale(1.2, 1.2);
+  }
+
+  .arrow-left {
+    -moz-transform-origin: left top;
+    -ms-transform-origin: left top;
+    -webkit-transform-origin: left top;
+    transform-origin: left top;
+  }
+
+  .arrow-right {
+    -moz-transform-origin: right top;
+    -ms-transform-origin: right top;
+    -webkit-transform-origin: right top;
+    transform-origin: right top;
+  }
+
+  .btn-full {
+    -moz-transform: scale(1, 1);
+    -ms-transform: scale(1, 1);
+    -webkit-transform: scale(1, 1);
+    transform: scale(1, 1);
+  }
+}
+@media only screen and (orientation: landscape) {
+  .container {
+    max-width: 320px;
+  }
+}
+/* iPad and web */
+@media only screen and (min-device-width: 737px) {
+  .container {
+    max-width: 320px;
+    max-height: 600px;
+    top: 50%;
+    margin-top: -300px !important;
+  }
 }
