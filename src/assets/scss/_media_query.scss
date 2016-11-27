@@ -1,0 +1,27 @@
+@mixin for-size($range) {
+    $iphone6: 375px;
+    $phone-upper-boundary: 600px;
+    $tablet-portrait-upper-boundary: 900px;
+    $tablet-landscape-upper-boundary: 1200px;
+    $desktop-upper-boundary: 1800px;
+
+    @if $range == phone-only {
+        @media (max-width: #{$iphone6 - 1}) { @content; }
+    } @else if $range == iphone6-only {
+        @media (min-width: $iphone6) and (max-width: #{$phone-upper-boundary - 1}){ @content; }
+    } @else if $range == tablet-portrait-up {
+        @media (min-width: $phone-upper-boundary) { @content; }
+    } @else if $range == tablet-portait-only {
+        @media (min-width: $phone-upper-boundary) and (max-width: #{$tablet-portrait-upper-boundary - 1}) { @content; }
+    } @else if $range == tablet-landscape-up {
+        @media (min-width: $tablet-landscape-upper-boundary) { @content; }
+    } @else if $range == tablet-landscape-only {
+        @media (min-width: $tablet-portrait-upper-boundary) and (max-width: $tablet-landscape-upper-boundary - 1) { @content; }
+    } @else if $range == desktop-up {
+        @media (min-width: $tablet-landscape-upper-boundary) { @content; }
+    } @else if $range == desktop-only {
+        @media (min-width: $tablet-landscape-upper-boundary) and (max-width: $desktop-upper-boundary - 1) { @content; }
+    } @else if $range == big-desktop-up {
+        @media (min-width: $desktop-upper-boundary) { @content; }
+    }
+}   

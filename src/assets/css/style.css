@@ -123,16 +123,48 @@ body {
   -webkit-box-sizing: border-box;
   box-sizing: border-box;
 }
+@media (min-width: 375px) and (max-width: 599px) {
+  #app-wrap {
+    padding: 30px;
+  }
+}
+
+@media (max-width: 374px) {
+  .container {
+    max-width: 100%;
+  }
+}
+@media (min-width: 600px) {
+  .container {
+    max-width: 320px;
+    max-height: 600px;
+    top: 50%;
+    margin-top: -300px !important;
+  }
+}
 
 .scroll-wrap {
   padding: 20px 0;
-  height: 15%;
+  height: 22%;
+  -moz-box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
 }
 
 .control-wrap {
   display: flex;
   flex-direction: row;
   align-items: baseline;
+}
+@media (max-width: 374px) {
+  .control-wrap {
+    align-items: stretch;
+  }
+}
+@media (min-width: 600px) {
+  .control-wrap {
+    align-items: stretch;
+  }
 }
 .control-wrap .touchcarousel-container {
   flex: 1;
@@ -144,18 +176,22 @@ body {
 
 .header {
   padding-top: 10px;
-  height: 20%;
+  height: 22%;
+  -moz-box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
 }
 
 .footer {
-  padding: 1.250em;
-  left: 0;
-  bottom: 0px;
-  position: absolute;
   width: 100%;
   -moz-box-sizing: border-box;
   -webkit-box-sizing: border-box;
   box-sizing: border-box;
+}
+@media (min-width: 375px) and (max-width: 599px) {
+  .footer {
+    padding-top: 20px;
+  }
 }
 
 .btn {
@@ -163,6 +199,26 @@ body {
   height: 44px;
   display: inline-block;
   text-decoration: none;
+}
+@media (min-width: 375px) and (max-width: 599px) {
+  .btn {
+    -moz-transform: scale(1.2, 1.2);
+    -ms-transform: scale(1.2, 1.2);
+    -webkit-transform: scale(1.2, 1.2);
+    transform: scale(1.2, 1.2);
+  }
+  .btn.arrow-left {
+    -moz-transform-origin: left top;
+    -ms-transform-origin: left top;
+    -webkit-transform-origin: left top;
+    transform-origin: left top;
+  }
+  .btn.arrow-right {
+    -moz-transform-origin: right top;
+    -ms-transform-origin: right top;
+    -webkit-transform-origin: right top;
+    transform-origin: right top;
+  }
 }
 
 .btn-full {
@@ -186,11 +242,29 @@ body {
   color: #ED3F95;
   background-color: white;
 }
+@media (min-width: 375px) and (max-width: 599px) {
+  .btn-full {
+    -moz-transform: scale(1, 1);
+    -ms-transform: scale(1, 1);
+    -webkit-transform: scale(1, 1);
+    transform: scale(1, 1);
+  }
+}
 
 li.item {
   font-size: 3.125em;
   font-family: AppleGothic;
   color: white;
+}
+@media (max-width: 374px) {
+  li.item {
+    font-size: 2.75em;
+  }
+}
+@media (min-width: 600px) {
+  li.item {
+    font-size: 2.85em;
+  }
 }
 
 i.time {
@@ -216,58 +290,4 @@ h2 {
   line-height: 1.5rem;
   color: white;
   text-transform: uppercase;
-}
-
-@media only screen and (min-device-width: 320px) and (max-device-width: 376px) {
-  .container {
-    max-width: 100%;
-  }
-}
-/* iPhone 6 / 6plus */
-@media only screen and (min-device-width: 375px) and (max-device-width: 736px) {
-  .container {
-    max-width: 100%;
-  }
-
-  .btn {
-    -moz-transform: scale(1.2, 1.2);
-    -ms-transform: scale(1.2, 1.2);
-    -webkit-transform: scale(1.2, 1.2);
-    transform: scale(1.2, 1.2);
-  }
-
-  .arrow-left {
-    -moz-transform-origin: left top;
-    -ms-transform-origin: left top;
-    -webkit-transform-origin: left top;
-    transform-origin: left top;
-  }
-
-  .arrow-right {
-    -moz-transform-origin: right top;
-    -ms-transform-origin: right top;
-    -webkit-transform-origin: right top;
-    transform-origin: right top;
-  }
-
-  .btn-full {
-    -moz-transform: scale(1, 1);
-    -ms-transform: scale(1, 1);
-    -webkit-transform: scale(1, 1);
-    transform: scale(1, 1);
-  }
-}
-@media only screen and (orientation: landscape) {
-  .container {
-    max-width: 320px;
-  }
-}
-/* iPad and web */
-@media only screen and (min-device-width: 737px) {
-  .container {
-    max-width: 320px;
-    max-height: 600px;
-    top: 50%;
-    margin-top: -300px !important;
-  }
 }

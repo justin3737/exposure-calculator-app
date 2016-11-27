@@ -2,6 +2,7 @@
 @import "compass/css3";
 @import "color";
 @import "arrow";
+@import "media_query";
 
 html {
     width: 100%;
@@ -24,18 +25,40 @@ body {
     background-color: $bg;
     background-image: linear-gradient(-1deg, rgba(237,63,149,0.87) 0%, rgba(216,13,121,0.90) 85%);
     @include box-sizing(border-box);
+    @include for-size(iphone6-only) {
+        padding: 30px;
+    }
 }
-    
+    .container {
+        @include for-size(phone-only) {
+            max-width: 100%;
+        }
+        @include for-size(tablet-portrait-up) {
+            max-width: 320px;
+            max-height: 600px;
+            top: 50%;
+            margin-top: -300px !important ; 
+        }
+    }
+
     .scroll-wrap {
         padding: 20px 0;
-        height: 15%;
+        height: 22%;
+        @include box-sizing(border-box);
     }
 
     .control-wrap {
         display: flex;
         flex-direction: row;
         align-items: baseline;
-
+        
+        @include for-size(phone-only) {
+            align-items: stretch;
+        }
+        @include for-size(tablet-portrait-up) {
+            align-items: stretch;
+        }
+        
         & .touchcarousel-container {
             flex:1;
         }
@@ -48,16 +71,16 @@ body {
     
     .header {
         padding-top: 10px;
-        height: 20%;
+        height: 22%;
+        @include box-sizing(border-box);
     }
 
     .footer {
-        padding: 1.250em;
-        left: 0;
-        bottom: 0px;
-        position: absolute;
         width: 100%;
         @include box-sizing(border-box);
+        @include for-size(iphone6-only) {
+            padding-top: 20px;
+        }
     }
 
     .btn {
@@ -65,6 +88,17 @@ body {
         height: 44px;
         display: inline-block;
         text-decoration: none;
+
+        @include for-size(iphone6-only) {
+            @include scale(1.2);
+
+            &.arrow-left {
+                @include transform-origin(left,top);
+            }
+            &.arrow-right {
+                @include transform-origin(right,top);
+            }
+        }
     }
 
     .btn-full {
@@ -84,12 +118,23 @@ body {
             color: $bg;
             background-color: $white;
         };
+
+        @include for-size(iphone6-only) {
+            @include scale(1);
+        }
     }
 
     li.item {
         font-size: 3.125em;
         font-family: AppleGothic;
         color: $white;
+
+        @include for-size(phone-only) {
+            font-size: 2.75em;
+        }
+        @include for-size(tablet-portrait-up) {
+            font-size: 2.85em;
+        }
     }
 
     i.time {
@@ -115,5 +160,3 @@ body {
         color:$white;
         text-transform: uppercase;
     }
-
-@import "mediaQuery";
