@@ -25,6 +25,7 @@ body {
     background-color: $bg;
     background-image: linear-gradient(-1deg, rgba(237,63,149,0.87) 0%, rgba(216,13,121,0.90) 85%);
     @include box-sizing(border-box);
+
     @include for-size(iphone6-only) {
         padding: 30px;
     }
@@ -34,9 +35,9 @@ body {
             max-width: 100%;
         }
         @include for-size(tablet-portrait-up) {
+            top: 50%;
             max-width: 320px;
             max-height: 600px;
-            top: 50%;
             margin-top: -300px !important ; 
         }
     }
@@ -125,7 +126,7 @@ body {
     }
 
     li.item {
-        font-size: 3.125em;
+        font-size: 3em;
         font-family: AppleGothic;
         color: $white;
 
