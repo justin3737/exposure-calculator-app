@@ -1,6 +1,4 @@
 @import "compass/css3";
-@import "color";
-/* arrow scss */
 
 .btn-arrow {
 	background-color: white;
@@ -13,8 +11,8 @@
 		position: absolute;
 		width: 13px;
 		height: 13px;
-		border-top:2px solid $bg;
-		border-right:2px solid $bg;
+		border-top:2px solid red;
+		border-right:2px solid red;
 	};
 
 	&:hover, &.is-active {

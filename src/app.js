@@ -1,17 +1,14 @@
 import 'babel-polyfill';
 import React from 'react';
 import { render } from 'react-dom';
-import { createStore, applyMiddleware, compose } from 'redux';
+import { createStore, compose } from 'redux';
 import { Provider } from 'react-redux';
-
 import rootReducer from 'reducers';
-import appMiddleware from 'appMiddleware';
 
 import Root from 'components/containers/Root';
-
+import 'assets/scss/style';
 
 const finalCreateStore = compose(
-    applyMiddleware(appMiddleware),
     window.devToolsExtension ? window.devToolsExtension() : f => f
 )(createStore);
 

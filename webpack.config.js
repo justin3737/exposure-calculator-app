@@ -25,9 +25,9 @@ module.exports = {
                 exclude: /node_modules/,
                 include: path.join(__dirname, 'src')
             },
-            {
-                test: /\.(css|scss)$/,
-                loaders: ['style', 'css', 'sass']
+            { 
+                test: /\.scss$/, 
+                loader: "style!css!sass?outputStyle=expanded&includePaths[]=" + path.resolve(__dirname, "./node_modules/compass-mixins/lib")
             },
             {
                 test: /\.(png|jpg|jpeg|gif|ico)$/,

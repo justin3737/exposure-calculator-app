@@ -1,14 +1,21 @@
 import React, { Component } from 'react';
-import Hello from './hello';
+
+import ScrollWrap from '../component/ScrollWrap';
 
 export default class Root extends Component {
-    constructor() {
-        super();
-    }
     render() {
         return (
-            <div>
-                <Hello />
+            <div id="app-wrap" className="container">
+                <div className="header">
+                    <h1>exposure-calculator-app</h1>
+                    <i className="time"></i>
+                </div>
+                <ScrollWrap name="Shutter" />
+                <ScrollWrap name="ISO" />
+                <ScrollWrap name="Aperture" />
+                <div className="footer">
+                    <a href="javascript:;" className="btn btn-full">unlock</a>
+                </div>
             </div>
         );
     };

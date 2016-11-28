@@ -1,7 +1,11 @@
 ﻿@import "compass/reset";
 @import "compass/css3";
-@import "color";
-@import "arrow";
+
+//common
+@import "global_color";
+@import "circle_arrow";
+
+//media query mixin
 @import "media_query";
 
 html {
@@ -15,7 +19,9 @@ body {
     width: 100%;
     height: 100%;
 }
-
+#root {
+    height: 100%;
+}
 #app-wrap {
     position: relative;
     padding: 20px;
@@ -92,7 +98,11 @@ body {
 
         @include for-size(iphone6-only) {
             @include scale(1.2);
-
+            
+            &.btn-arrow {
+                border-top:2px solid $bg;
+                border-right:2px solid $bg;
+            }
             &.arrow-left {
                 @include transform-origin(left,top);
             }
