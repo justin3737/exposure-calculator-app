@@ -14,7 +14,9 @@ export default class Root extends Component {
                 <ScrollWrap name="ISO" />
                 <ScrollWrap name="Aperture" />
                 <div className="footer">
-                    <a href="javascript:;" className="btn btn-full">unlock</a>
+                    <a href="javascript:;" className="btn btn-full">
+                        <span>lock</span>
+                    </a>
                 </div>
             </div>
         );
