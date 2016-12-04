@@ -13,7 +13,7 @@ module.exports = {
     output: {
         path: __dirname + '/static',
         filename: '[name].js',
-        publicPath: '../static'
+        publicPath: '../static/'
     },
     plugins: [
         new ExtractText('[name].css'),
