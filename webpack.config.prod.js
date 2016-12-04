@@ -13,10 +13,10 @@ module.exports = {
     output: {
         path: __dirname + '/static',
         filename: '[name].js',
-        publicPath: '/static/'
+        publicPath: '../static'
     },
     plugins: [
-        new ExtractText('styles/[name].css'),
+        new ExtractText('[name].css'),
         new webpack.optimize.UglifyJsPlugin()
     ],
     module: {
