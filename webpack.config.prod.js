@@ -1,36 +1,39 @@
 var path = require('path');
 var webpack = require('webpack');
+var ExtractText = require ('extract-text-webpack-plugin');
 
 module.exports = {
     devtool: 'cheap-module-eval-source-map', 
     entry: {
         app: [
-            "webpack-hot-middleware/client?path=http://localhost:3000/__webpack_hmr",
             "./src/app"
         ],
         vendor: ['react', 'react-dom']
     },
     output: {
-        path: __dirname,
+        path: __dirname + '/static',
         filename: '[name].js',
-        publicPath: 'http://localhost:3000/static/'
+        publicPath: '/static/'
     },
     plugins: [
-        new webpack.optimize.OccurenceOrderPlugin(),
-        new webpack.HotModuleReplacementPlugin(),
-        new webpack.NoErrorsPlugin()
+        new ExtractText('styles/[name].css'),
+        new webpack.optimize.UglifyJsPlugin()
     ],
     module: {
         loaders: [
             {
                 test: /\.js$/,
-                loaders: ['babel'],
+                loaders: [ 'babel' ],
                 exclude: /node_modules/,
-                include: path.join(__dirname, 'src')
+                include: __dirname
             },
-            { 
-                test: /\.scss$/, 
-                loader: "style!css!sass?outputStyle=expanded&includePaths[]=" + path.resolve(__dirname, "./node_modules/compass-mixins/lib")
+            {
+                test   : /.scss$/,
+                loader : ExtractText.extract(
+                    'style-loader', 
+                    'css-loader!sass-loader?includePaths[]=' 
+                    + path.resolve(__dirname, './node_modules/compass-mixins/lib')
+                )
             },
             {
                 test: /\.(png|jpg|jpeg|gif|ico)$/,
