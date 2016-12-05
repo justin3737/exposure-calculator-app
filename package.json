@@ -15,7 +15,8 @@
   "scripts": {
     "start": "node server.js",
     "prod": "webpack --config webpack.config.prod.js",
-    "clean": "rimraf static"
+    "clean": "rimraf static",
+    "deploy": "gh-pages -d static"
   },
   "author": "Justin Wu",
   "license": "MIT",
@@ -41,6 +42,7 @@
     "express": "^4.13.3",
     "extract-text-webpack-plugin": "^1.0.1",
     "file-loader": "^0.8.5",
+    "gh-pages": "^0.12.0",
     "mocha": "^2.4.5",
     "node-sass": "^3.4.2",
     "parallelshell": "^2.0.0",
