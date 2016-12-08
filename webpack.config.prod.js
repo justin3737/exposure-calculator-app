@@ -11,9 +11,9 @@ module.exports = {
         vendor: ['react', 'react-dom']
     },
     output: {
-        path: __dirname + '/static',
+        path: __dirname + '/dist',
         filename: '[name].js',
-        publicPath: '../static/'
+        publicPath: ''
     },
     plugins: [
         new ExtractText('[name].css'),

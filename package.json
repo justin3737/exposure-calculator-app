@@ -14,9 +14,10 @@
   ],
   "scripts": {
     "start": "node server.js",
-    "prod": "webpack --config webpack.config.prod.js",
-    "clean": "rimraf static",
-    "deploy": "gh-pages -d static"
+    "build": "webpack --config webpack.config.prod.js&&cp index.html dist/",
+    "clean": "rimraf dist",
+    "deploy": "gh-pages -d dist",
+    "prod" : "npm run clean && npm run build && npm run deploy"
   },
   "author": "Justin Wu",
   "license": "MIT",
