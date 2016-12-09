@@ -13,7 +13,7 @@ module.exports = {
     output: {
         path: __dirname,
         filename: '[name].js',
-        publicPath: 'http://localhost:3000/'
+        publicPath: 'http://localhost:3000/assets/'
     },
     plugins: [
         new webpack.optimize.OccurenceOrderPlugin(),

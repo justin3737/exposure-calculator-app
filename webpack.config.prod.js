@@ -11,7 +11,7 @@ module.exports = {
         vendor: ['react', 'react-dom']
     },
     output: {
-        path: __dirname + '/dist',
+        path: __dirname + '/dist/assets/',
         filename: '[name].js',
         publicPath: ''
     },
