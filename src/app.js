@@ -5,7 +5,7 @@ import { createStore, compose } from 'redux';
 import { Provider } from 'react-redux';
 import rootReducer from 'reducers';
 
-import Root from 'components/containers/Root';
+import Root from 'components/Root';
 import 'assets/scss/style';
 
 const finalCreateStore = compose(

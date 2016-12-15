@@ -6,7 +6,10 @@ import { connect } from 'react-redux';
 import { toggleLock } from 'actions';
 import ScrollWrap from '../component/ScrollWrap';
 
-class Root extends Component {
+class Calculator extends Component {
+    constructor() {
+        super();
+    }
     _onClickBtn = () => {
         this.props.toggleLock();
     }
@@ -22,7 +25,7 @@ class Root extends Component {
                 <ScrollWrap name="Aperture" />
                 <div className="footer">
                     <a href="javascript:;" className="btn btn-full" onClick={this._onClickBtn}>
-                        <span>{(this.props.lock)?'lock':'unlock'}</span>
+                        <span>{(this.props.lock)?'unlock':'lock'}</span>
                     </a>
                 </div>
             </div>
@@ -30,7 +33,7 @@ class Root extends Component {
     };
 };
 
-Root.propTypes = {
+Calculator.propTypes = {
     lock       : PropTypes.bool.isRequired,
     toggleLock : PropTypes.func.isRequired
 };
@@ -42,4 +45,4 @@ export default connect(
     dispatch => bindActionCreators({
         toggleLock,
     }, dispatch)
-)(Root);
+)(Calculator);
