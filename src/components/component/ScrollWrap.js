@@ -1,11 +1,14 @@
 import React, { Component } from 'react';
+import classnames from 'classnames';
 
 export default class ScrollWrap extends Component {
     static props = {
-        name: ''
+        name      : '',
+        isDisabled: false
     }
     static defaultProps = {
-        name: React.PropTypes.string
+        name      : React.PropTypes.string.isRequired,
+        isDisabled: React.PropTypes.bool,
     }
     constructor() {
         super();
@@ -16,16 +19,20 @@ export default class ScrollWrap extends Component {
         );
     }
     render() {
-        const {name} = this.props;
+        const { name, isDisabled } = this.props;
         return (
             <div className="scroll-wrap">
-                <h2>{name}</h2>
+                <h2>{ name }</h2>
                 <div className="control-wrap">
-                    <a href="javascript:;" className="btn btn-arrow arrow-left"></a>
+                    <a  href="javascript:;" 
+                        className={classnames({'btn':true,'btn-arrow':true,'arrow-left':true, 'is-disabled':!isDisabled})}>
+                    </a>
                     <ul className="touchcarousel-container">
                         {this._renderChildren()}
                     </ul>
-                    <a href="javascript:;" className="btn btn-arrow arrow-right"></a>
+                    <a  href="javascript:;" 
+                        className={classnames({'btn':true,'btn-arrow':true,'arrow-right':true, 'is-disabled':!isDisabled})}>
+                    </a>
                 </div>
             </div>
         );

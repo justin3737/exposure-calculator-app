@@ -1,7 +1,8 @@
 import React, { PropTypes, Component } from 'react';
-
 import { bindActionCreators } from 'redux';
 import { connect } from 'react-redux';
+
+import classnames from 'classnames';
 
 import { toggleLock } from 'actions';
 import ScrollWrap from '../component/ScrollWrap';
@@ -14,18 +15,21 @@ class Calculator extends Component {
         this.props.toggleLock();
     }
     render() {
+        let { lock } = this.props;
         return (
             <div id="app-wrap" className="container">
                 <div className="header">
                     <h1>exposure-calculator-app</h1>
                     <i className="time"></i>
                 </div>
-                <ScrollWrap name="Shutter" />
+                <ScrollWrap name="Shutter" isDisabled={!lock}/>
                 <ScrollWrap name="ISO" />
                 <ScrollWrap name="Aperture" />
                 <div className="footer">
-                    <a href="javascript:;" className="btn btn-full" onClick={this._onClickBtn}>
-                        <span>{(this.props.lock)?'unlock':'lock'}</span>
+                    <a  href="javascript:;" 
+                        onClick={this._onClickBtn}
+                        className={classnames({'btn':true,'btn-full':true,'is-active':lock})} >
+                            <span>{(lock)?'lock':'unlock'}</span>
                     </a>
                 </div>
             </div>
