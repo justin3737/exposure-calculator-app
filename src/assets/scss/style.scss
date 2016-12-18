@@ -1,12 +1,20 @@
 ﻿@import "compass/reset";
 @import "compass/css3";
 
+//import slick styles
+@import "../../../node_modules/slick-carousel/slick/slick.scss";
+
 //common
 @import "global_color";
 @import "circle_arrow";
 
 //media query mixin
 @import "media_query";
+
+* {
+  min-height: 0;
+  min-width: 0;
+}
 
 html {
     width: 100%;
@@ -177,3 +185,6 @@ body {
         color:$white;
         text-transform: uppercase;
     }
+
+    /* override slick style */
+   

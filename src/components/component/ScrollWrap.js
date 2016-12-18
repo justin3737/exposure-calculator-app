@@ -1,4 +1,6 @@
 import React, { Component } from 'react';
+import Slider from 'react-slick';
+
 import classnames from 'classnames';
 
 export default class ScrollWrap extends Component {
@@ -14,8 +16,24 @@ export default class ScrollWrap extends Component {
         super();
     }
     _renderChildren = () => {
+        // <li className="item">1/4000</li>
+        let settings = {
+            arrows: false,
+            dots: false,
+            infinite: false,
+            speed: 500,
+            slidesToShow: 1,
+            slidesToScroll: 1
+        };
         return(
-            <li className="item">1/4000</li>
+            <Slider {...settings}>
+                <div><h3>1</h3></div>
+                <div><h3>2</h3></div>
+                <div><h3>3</h3></div>
+                <div><h3>4</h3></div>
+                <div><h3>5</h3></div>
+                <div><h3>6</h3></div>
+            </Slider>
         );
     }
     render() {
