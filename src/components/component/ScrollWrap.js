@@ -1,22 +1,29 @@
-import React, { Component } from 'react';
+import React, { PropTypes, Component } from 'react';
 import Slider from 'react-slick';
 
 import classnames from 'classnames';
+import ArrowBtn from './ArrowBtn';
 
 export default class ScrollWrap extends Component {
-    static props = {
-        name      : '',
-        isDisabled: false
-    }
     static defaultProps = {
-        name      : React.PropTypes.string.isRequired,
-        isDisabled: React.PropTypes.bool,
+        name      : ''
+    }
+    static PropTypes = {
+        name      : PropTypes.string.isRequired,
+        isDisabled: PropTypes.bool
     }
     constructor() {
         super();
     }
+    _prev = () => {
+        if (this.props.isDisabled) return;
+        this.refs.slider.slickPrev();
+    }
+    _next = () => {
+        if (this.props.isDisabled) return;
+        this.refs.slider.slickNext();
+    }
     _renderChildren = () => {
-        // <li className="item">1/4000</li>
         let settings = {
             arrows: false,
             dots: false,
@@ -26,13 +33,13 @@ export default class ScrollWrap extends Component {
             slidesToScroll: 1
         };
         return(
-            <Slider {...settings}>
-                <div><h3>1</h3></div>
-                <div><h3>2</h3></div>
-                <div><h3>3</h3></div>
-                <div><h3>4</h3></div>
-                <div><h3>5</h3></div>
-                <div><h3>6</h3></div>
+            <Slider ref='slider' {...settings}>
+                <div><div className="item">1/4000</div></div>
+                <div><div className="item">F2.8</div></div>
+                <div><div className="item">51200</div></div>
+                <div><div className="item">1/320</div></div>
+                <div><div className="item">10sec</div></div>
+                <div><div className="item">F16</div></div>
             </Slider>
         );
     }
@@ -42,15 +49,11 @@ export default class ScrollWrap extends Component {
             <div className="scroll-wrap">
                 <h2>{ name }</h2>
                 <div className="control-wrap">
-                    <a  href="javascript:;" 
-                        className={classnames({'btn':true,'btn-arrow':true,'arrow-left':true, 'is-disabled':!isDisabled})}>
-                    </a>
-                    <ul className="touchcarousel-container">
+                    <ArrowBtn onClick={this._prev} type='left' isDisabled={isDisabled}/>
+                    <div className="touchcarousel-container">
                         {this._renderChildren()}
-                    </ul>
-                    <a  href="javascript:;" 
-                        className={classnames({'btn':true,'btn-arrow':true,'arrow-right':true, 'is-disabled':!isDisabled})}>
-                    </a>
+                    </div>
+                    <ArrowBtn onClick={this._next} type='right' isDisabled={isDisabled}/>
                 </div>
             </div>
         );

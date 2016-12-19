@@ -65,7 +65,6 @@ body {
     .control-wrap {
         display: flex;
         flex-direction: row;
-        align-items: baseline;
         
         @include for-size(phone-only) {
             align-items: stretch;
@@ -149,7 +148,7 @@ body {
         }
     }
 
-    li.item {
+    .touchcarousel-container .item {
         font-size: 3em;
         font-family: AppleGothic;
         color: $white;

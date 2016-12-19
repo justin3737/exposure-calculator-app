@@ -11,7 +11,7 @@ class Calculator extends Component {
     constructor() {
         super();
     }
-    _onClickBtn = () => {
+    _onToggleLockBtn = () => {
         this.props.toggleLock();
     }
     render() {
@@ -22,12 +22,12 @@ class Calculator extends Component {
                     <h1>exposure-calculator-app</h1>
                     <i className="time"></i>
                 </div>
-                <ScrollWrap name="Shutter" isDisabled={!lock}/>
+                <ScrollWrap name="Shutter" isDisabled={lock}/>
                 <ScrollWrap name="ISO" />
                 <ScrollWrap name="Aperture" />
                 <div className="footer">
                     <a  href="javascript:;" 
-                        onClick={this._onClickBtn}
+                        onClick={this._onToggleLockBtn}
                         className={classnames({'btn':true,'btn-full':true,'is-active':lock})} >
                             <span>{(lock)?'lock':'unlock'}</span>
                     </a>
