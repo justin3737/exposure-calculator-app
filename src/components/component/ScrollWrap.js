@@ -16,22 +16,33 @@ export default class ScrollWrap extends Component {
         super();
     }
     _prev = () => {
-        if (this.props.isDisabled) return;
         this.refs.slider.slickPrev();
     }
     _next = () => {
-        if (this.props.isDisabled) return;
         this.refs.slider.slickNext();
     }
     _renderChildren = () => {
-        let settings = {
-            arrows: false,
-            dots: false,
-            infinite: false,
-            speed: 500,
-            slidesToShow: 1,
-            slidesToScroll: 1
-        };
+        let _this = this,
+            settings = {
+                arrows: false,
+                dots: false,
+                infinite: false,
+                speed: 500,
+                slidesToShow: 1,
+                slidesToScroll: 1,
+                _rollback: -1,
+                beforeChange : function (currentSlide, nextSlide) {
+                    if (_this.props.isDisabled && _this._rollback === -1) {
+                        _this._rollback = currentSlide;
+                    }
+                },
+                afterChange: function (currentSlide, nextSlide) {
+                    if (_this.props.isDisabled && _this._rollback !== -1) {
+                        _this.refs.slider.slickGoTo(_this._rollback);
+                    }                
+                }
+            };
+        _this._rollback = -1; 
         return(
             <Slider ref='slider' {...settings}>
                 <div><div className="item">1/4000</div></div>
