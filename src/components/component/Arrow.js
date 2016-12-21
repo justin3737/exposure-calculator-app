@@ -8,7 +8,7 @@ export default class Arrow extends Component {
     static PropTypes = {
         type      : PropTypes.string.isRequired,
         isDisabled: PropTypes.bool,
-        clickBtn  : PropTypes.func
+        onClick   : PropTypes.func
     }
     constructor() {
         super();

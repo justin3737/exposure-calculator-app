@@ -5,7 +5,9 @@ import { connect } from 'react-redux';
 import classnames from 'classnames';
 
 import { toggleLock } from 'actions';
+import Header from '../component/Header';
 import Slider from '../component/Slider';
+import Footer from '../component/Footer';
 
 class Calculator extends Component {
     constructor() {
@@ -18,20 +20,11 @@ class Calculator extends Component {
         let { lock } = this.props;
         return (
             <div id="app-wrap" className="container">
-                <div className="header">
-                    <h1>exposure-calculator-app</h1>
-                    <i className="time"></i>
-                </div>
+                <Header />
                 <Slider name="Shutter" isDisabled={lock}/>
                 <Slider name="ISO" />
                 <Slider name="Aperture" />
-                <div className="footer">
-                    <a  href="javascript:;" 
-                        onClick={this._onToggleLockBtn}
-                        className={classnames({'btn':true,'btn-full':true,'is-active':lock})} >
-                            <span>{(lock)?'lock':'unlock'}</span>
-                    </a>
-                </div>
+                <Footer lock={lock} onClick={this._onToggleLockBtn} />
             </div>
         );
     };
