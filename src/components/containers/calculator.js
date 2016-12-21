@@ -5,7 +5,7 @@ import { connect } from 'react-redux';
 import classnames from 'classnames';
 
 import { toggleLock } from 'actions';
-import ScrollWrap from '../component/ScrollWrap';
+import Slider from '../component/Slider';
 
 class Calculator extends Component {
     constructor() {
@@ -22,9 +22,9 @@ class Calculator extends Component {
                     <h1>exposure-calculator-app</h1>
                     <i className="time"></i>
                 </div>
-                <ScrollWrap name="Shutter" isDisabled={lock}/>
-                <ScrollWrap name="ISO" />
-                <ScrollWrap name="Aperture" />
+                <Slider name="Shutter" isDisabled={lock}/>
+                <Slider name="ISO" />
+                <Slider name="Aperture" />
                 <div className="footer">
                     <a  href="javascript:;" 
                         onClick={this._onToggleLockBtn}

@@ -1,7 +1,7 @@
 import React, { PropTypes, Component } from 'react';
 import classnames from 'classnames';
 
-export default class ArrowBtn extends Component {
+export default class Arrow extends Component {
     static defaultProps = {
         type      : 'left'
     }
