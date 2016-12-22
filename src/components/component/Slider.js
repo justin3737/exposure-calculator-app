@@ -52,7 +52,9 @@ export default class Slider extends Component {
             <Slicker ref='slider' {...settings}>
                 {
                     data.map((val, index) => (
-                        <div><div className="item" data-index={index} key={name + index}>{val}</div></div>
+                        <div data-index={index} key={name + index}>
+                            <div className="item">{val}</div>
+                        </div>
                     ))
                 }
             </Slicker>

@@ -19,7 +19,7 @@ export default class Footer extends Component {
                 <a  href="javascript:;"
                     onClick={onClick}
                     className={classnames({'btn':true,'btn-full':true,'is-active':lock})} >
-                        <span>{(lock)?'lock':'unlock'}</span>
+                        <span>{(lock)?'unlock':'lock'}</span>
                 </a>
             </div>
         );

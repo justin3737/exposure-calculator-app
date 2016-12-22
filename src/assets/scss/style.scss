@@ -45,6 +45,7 @@ body {
     }
 }
     .container {
+        user-select: none;
         @include for-size(phone-only) {
             max-width: 100%;
         }
