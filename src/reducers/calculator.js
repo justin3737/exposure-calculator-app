@@ -1,7 +1,9 @@
 import * as types from '../constants/ActionTypes';
+import expdata from './expdata';
 
 let initialState = {
-    lock : false
+    lock   : false,
+    expdata
 };
 
 const calculator = (state = initialState, action) => {

@@ -6,10 +6,12 @@ import Arrow from './Arrow';
 
 export default class Slider extends Component {
     static defaultProps = {
-        name      : ''
+        name      : '',
+        data      : []
     }
     static PropTypes = {
         name      : PropTypes.string.isRequired,
+        data      : PropTypes.array,
         isDisabled: PropTypes.bool
     }
     constructor() {
@@ -25,6 +27,7 @@ export default class Slider extends Component {
         this.refs.slider.slickGoTo(id);
     }
     _renderChildren = () => {
+        const { name, data } = this.props;
         let _this = this,
             settings = {
                 arrows: false,
@@ -47,12 +50,11 @@ export default class Slider extends Component {
         _this._rollback = -1; 
         return(
             <Slicker ref='slider' {...settings}>
-                <div><div className="item">1/4000</div></div>
-                <div><div className="item">F2.8</div></div>
-                <div><div className="item">51200</div></div>
-                <div><div className="item">1/320</div></div>
-                <div><div className="item">10sec</div></div>
-                <div><div className="item">F16</div></div>
+                {
+                    data.map((val, index) => (
+                        <div><div className="item" data-index={index} key={name + index}>{val}</div></div>
+                    ))
+                }
             </Slicker>
         );
     }

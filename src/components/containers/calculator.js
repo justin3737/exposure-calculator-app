@@ -17,13 +17,13 @@ class Calculator extends Component {
         this.props.toggleLock();
     }
     render() {
-        let { lock } = this.props;
+        let { lock, expdata } = this.props;
         return (
             <div id="app-wrap" className="container">
                 <Header />
-                <Slider name="Shutter" isDisabled={lock}/>
-                <Slider name="ISO" />
-                <Slider name="Aperture" />
+                <Slider name="Shutter" data={expdata.shutter} isDisabled={lock}/>
+                <Slider name="ISO" data={expdata.iso} />
+                <Slider name="Aperture" data={expdata.aperture} />
                 <Footer lock={lock} onClick={this._onToggleLockBtn} />
             </div>
         );
@@ -32,12 +32,14 @@ class Calculator extends Component {
 
 Calculator.propTypes = {
     lock       : PropTypes.bool.isRequired,
-    toggleLock : PropTypes.func.isRequired
+    toggleLock : PropTypes.func.isRequired,
+    expdata    : PropTypes.object.isRequired
 };
 
 export default connect(
     state => ({
-        lock : state.calculator.lock
+        lock   : state.calculator.lock,
+        expdata: state.calculator.expdata
     }),
     dispatch => bindActionCreators({
         toggleLock,
