@@ -13,7 +13,8 @@ let expdata = {
         "F22",
         "F32",
         "F45",
-        "F64"
+        "F64",
+        "F90"
     ],
     iso: [
         "--",
@@ -29,7 +30,8 @@ let expdata = {
         "25600",
         "51200",
         "102400",
-        "204800"
+        "204800",
+        "409600"
     ],
     shutter: [
         "--",
@@ -60,8 +62,8 @@ let expdata = {
         "30min",
         "1hr",
         "2hr",
-        "4hr"
+        "4hr",
+        "8hr"
     ]   
 };
-
 export default expdata;

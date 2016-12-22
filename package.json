@@ -14,7 +14,7 @@
   ],
   "scripts": {
     "start": "node server.js",
-    "build": "webpack --config webpack.config.prod.js --define process.env.NODE_ENV='\"production\"' && cp index.html dist/",
+    "build": "webpack -p --config webpack.config.prod.js --define process.env.NODE_ENV='\"production\"' && cp index.html dist/",
     "clean": "rimraf dist",
     "deploy": "gh-pages -d dist",
     "prod": "npm run clean && npm run build && npm run deploy"
@@ -59,7 +59,7 @@
     "react": "^0.14.7",
     "react-dom": "^0.14.7",
     "react-redux": "^4.0.0",
-    "react-slick": "^0.14.5",
+    "react-slick": "0.14.5",
     "redux": "^3.0.4",
     "redux-thunk": "^1.0.3",
     "slick-carousel": "^1.6.0"

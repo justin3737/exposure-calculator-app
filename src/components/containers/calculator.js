@@ -16,15 +16,31 @@ class Calculator extends Component {
     _onToggleLockBtn = () => {
         this.props.toggleLock();
     }
+    _changeId = (id) => {
+        console.log(id);
+    }
     render() {
-        let { lock, expdata } = this.props;
+        let { lock, expdata, gotoId } = this.props;
         return (
             <div id="app-wrap" className="container">
                 <Header />
-                <Slider name="Shutter" data={expdata.shutter} isDisabled={lock}/>
-                <Slider name="ISO" data={expdata.iso} />
-                <Slider name="Aperture" data={expdata.aperture} />
-                <Footer lock={lock} onClick={this._onToggleLockBtn} />
+                <Slider 
+                    name="Shutter" 
+                    changeId={this._changeId} 
+                    data={expdata.shutter} 
+                    isDisabled={lock}
+                    gotoId={gotoId}/>
+                <Slider 
+                    name="ISO" 
+                    changeId={this._changeId} 
+                    data={expdata.iso} />
+                <Slider 
+                    name="Aperture" 
+                    changeId={this._changeId} 
+                    data={expdata.aperture} />
+                <Footer 
+                    lock={lock} 
+                    onClick={this._onToggleLockBtn} />
             </div>
         );
     };
@@ -33,12 +49,14 @@ class Calculator extends Component {
 Calculator.propTypes = {
     lock       : PropTypes.bool.isRequired,
     toggleLock : PropTypes.func.isRequired,
-    expdata    : PropTypes.object.isRequired
+    expdata    : PropTypes.object.isRequired,
+    gotoId     : PropTypes.number
 };
 
 export default connect(
     state => ({
         lock   : state.calculator.lock,
+        gotoId : state.calculator.gotoId,
         expdata: state.calculator.expdata
     }),
     dispatch => bindActionCreators({

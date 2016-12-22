@@ -7,15 +7,21 @@ import Arrow from './Arrow';
 export default class Slider extends Component {
     static defaultProps = {
         name      : '',
-        data      : []
+        data      : [],
+        gotoId    : 0
     }
     static PropTypes = {
         name      : PropTypes.string.isRequired,
+        changeId  : PropTypes.func.isRequired,
         data      : PropTypes.array,
+        gotoId    : PropTypes.number,
         isDisabled: PropTypes.bool
     }
     constructor() {
         super();
+    }
+    shouldComponentUpdate(nextProps) {
+        return (this.props.gotoId != nextProps.gotoId);
     }
     _prev = () => {
         this.refs.slider.slickPrev();
@@ -27,7 +33,7 @@ export default class Slider extends Component {
         this.refs.slider.slickGoTo(id);
     }
     _renderChildren = () => {
-        const { name, data } = this.props;
+        const { name, data, changeId, gotoId } = this.props;
         let _this = this,
             settings = {
                 arrows: false,
@@ -36,6 +42,7 @@ export default class Slider extends Component {
                 speed: 350,
                 slidesToShow: 1,
                 slidesToScroll: 1,
+                slickGoTo:gotoId,
                 beforeChange : function (currentSlide, nextSlide) {
                     if (_this.props.isDisabled && _this._rollback === -1) {
                         _this._rollback = currentSlide;
@@ -44,16 +51,21 @@ export default class Slider extends Component {
                 afterChange: function (currentSlide, nextSlide) {
                     if (_this.props.isDisabled && _this._rollback !== -1) {
                         _this._goto(_this._rollback);
-                    }                
-                }
+                    }
+                    if (!_this.props.isDisabled) 
+                        changeId(name + '_' + currentSlide);   
+                }  
             };
         _this._rollback = -1; 
         return(
             <Slicker ref='slider' {...settings}>
                 {
                     data.map((val, index) => (
-                        <div data-index={index} key={name + index}>
-                            <div className="item">{val}</div>
+                        <div 
+                            data-index={index} 
+                            key={name + index} 
+                            className="item">
+                            {val}
                         </div>
                     ))
                 }
@@ -66,11 +78,17 @@ export default class Slider extends Component {
             <div className="scroll-wrap">
                 <h2>{ name }</h2>
                 <div className="control-wrap">
-                    <Arrow onClick={this._prev} type='left' isDisabled={isDisabled}/>
+                    <Arrow 
+                        onClick={this._prev} 
+                        type='left' 
+                        isDisabled={isDisabled}/>
                     <div className="touchcarousel-container">
                         {this._renderChildren()}
                     </div>
-                    <Arrow onClick={this._next} type='right' isDisabled={isDisabled}/>
+                    <Arrow 
+                        onClick={this._next} 
+                        type='right' 
+                        isDisabled={isDisabled}/>
                 </div>
             </div>
         );

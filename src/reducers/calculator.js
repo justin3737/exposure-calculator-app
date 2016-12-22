@@ -3,6 +3,7 @@ import expdata from './expdata';
 
 let initialState = {
     lock   : false,
+    gotoId : 0,
     expdata
 };
 
@@ -11,7 +12,8 @@ const calculator = (state = initialState, action) => {
         case types.TOGGLE_LOCK:
             return {
                 ...state,
-                lock: !state.lock
+                lock  : !state.lock,
+                gotoId: state.gotoId+=1
             };
         default:
             return state;
