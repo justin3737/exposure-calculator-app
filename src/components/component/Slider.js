@@ -21,7 +21,8 @@ export default class Slider extends Component {
         super();
     }
     shouldComponentUpdate(nextProps) {
-        return (this.props.gotoId != nextProps.gotoId);
+        let { gotoId, isDisabled } = this.props;
+        return (gotoId != nextProps.gotoId || isDisabled != nextProps.isDisabled);
     }
     _prev = () => {
         this.refs.slider.slickPrev();

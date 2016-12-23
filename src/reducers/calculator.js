@@ -2,9 +2,13 @@ import * as types from '../constants/ActionTypes';
 import expdata from './expdata';
 
 let initialState = {
-    lock   : false,
-    gotoId : 0,
-    expdata
+    lock      : false,
+    expdata,
+    gotoSlick : {
+        Shutter : 0,
+        ISO     : 0,
+        Aperture: 0
+    }
 };
 
 const calculator = (state = initialState, action) => {
@@ -12,8 +16,18 @@ const calculator = (state = initialState, action) => {
         case types.TOGGLE_LOCK:
             return {
                 ...state,
-                lock  : !state.lock,
-                gotoId: state.gotoId+=1
+                lock  : !state.lock
+            };
+        case types.CHANGE_SLICK_ID:
+            let arr = action.id.split('_'),
+                name = arr[0],
+                val = parseInt(arr[1],10);
+            return {
+                ...state,
+                gotoSlick: {
+                    ...state.gotoSlick,
+                    [name]: val
+                }
             };
         default:
             return state;

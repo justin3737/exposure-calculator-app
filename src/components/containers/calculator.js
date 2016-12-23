@@ -4,7 +4,7 @@ import { connect } from 'react-redux';
 
 import classnames from 'classnames';
 
-import { toggleLock } from 'actions';
+import { toggleLock, gotoSlick } from 'actions';
 import Header from '../component/Header';
 import Slider from '../component/Slider';
 import Footer from '../component/Footer';
@@ -17,7 +17,7 @@ class Calculator extends Component {
         this.props.toggleLock();
     }
     _changeId = (id) => {
-        console.log(id);
+        this.props.gotoSlick(id);
     }
     render() {
         let { lock, expdata, gotoId } = this.props;
@@ -49,6 +49,7 @@ class Calculator extends Component {
 Calculator.propTypes = {
     lock       : PropTypes.bool.isRequired,
     toggleLock : PropTypes.func.isRequired,
+    gotoSlick  : PropTypes.func.isRequired,
     expdata    : PropTypes.object.isRequired,
     gotoId     : PropTypes.number
 };
@@ -61,5 +62,6 @@ export default connect(
     }),
     dispatch => bindActionCreators({
         toggleLock,
+        gotoSlick
     }, dispatch)
 )(Calculator);
