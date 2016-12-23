@@ -4,7 +4,7 @@ import expdata from './expdata';
 let initialState = {
     lock      : false,
     expdata,
-    gotoSlick : {
+    exp : {
         Shutter : 0,
         ISO     : 0,
         Aperture: 0
@@ -24,8 +24,8 @@ const calculator = (state = initialState, action) => {
                 val = parseInt(arr[1],10);
             return {
                 ...state,
-                gotoSlick: {
-                    ...state.gotoSlick,
+                exp: {
+                    ...state.exp,
                     [name]: val
                 }
             };

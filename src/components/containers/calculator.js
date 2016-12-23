@@ -20,7 +20,7 @@ class Calculator extends Component {
         this.props.gotoSlick(id);
     }
     render() {
-        let { lock, expdata, gotoId } = this.props;
+        let { lock, expdata, exp } = this.props;
         return (
             <div id="app-wrap" className="container">
                 <Header />
@@ -28,11 +28,11 @@ class Calculator extends Component {
                     name="Shutter" 
                     changeId={this._changeId} 
                     data={expdata}
-                    gotoId={gotoId}
+                    exp={exp}
                     isDisabled={lock}/>
                 <Slider 
                     name="ISO" 
-                    changeId={this._changeId} 
+                    changeId={this._changeId}
                     data={expdata} />
                 <Slider 
                     name="Aperture" 
@@ -51,13 +51,13 @@ Calculator.propTypes = {
     toggleLock : PropTypes.func.isRequired,
     gotoSlick  : PropTypes.func.isRequired,
     expdata    : PropTypes.object.isRequired,
-    gotoId     : PropTypes.number
+    exp        : PropTypes.object.isRequired
 };
 
 export default connect(
     state => ({
         lock   : state.calculator.lock,
-        gotoId : state.calculator.gotoId,
+        exp    : state.calculator.exp,
         expdata: state.calculator.expdata
     }),
     dispatch => bindActionCreators({

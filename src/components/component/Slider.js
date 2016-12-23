@@ -6,23 +6,19 @@ import Arrow from './Arrow';
 
 export default class Slider extends Component {
     static defaultProps = {
-        name      : '',
-        data      : {},
-        gotoId    : 0
+        name: '',
+        data: {},
+        exp : {}
     }
     static PropTypes = {
         name      : PropTypes.string.isRequired,
         changeId  : PropTypes.func.isRequired,
         data      : PropTypes.object.isRequired,
-        gotoId    : PropTypes.number,
+        exp       : PropTypes.object,
         isDisabled: PropTypes.bool
     }
     constructor() {
         super();
-    }
-    shouldComponentUpdate(nextProps) {
-        let { gotoId, isDisabled } = this.props;
-        return (gotoId != nextProps.gotoId || isDisabled != nextProps.isDisabled);
     }
     _prev = () => {
         this.refs.slider.slickPrev();
@@ -34,7 +30,7 @@ export default class Slider extends Component {
         this.refs.slider.slickGoTo(id);
     }
     _renderChildren = () => {
-        const { name, data, changeId, gotoId } = this.props;
+        const { name, data, changeId, exp } = this.props;
         let _this = this,
             settings = {
                 arrows: false,
@@ -43,7 +39,7 @@ export default class Slider extends Component {
                 speed: 350,
                 slidesToShow: 1,
                 slidesToScroll: 1,
-                slickGoTo:gotoId,
+                //slickGoTo:exp[name],
                 beforeChange : function (currentSlide, nextSlide) {
                     if (_this.props.isDisabled && _this._rollback === -1) {
                         _this._rollback = currentSlide;
