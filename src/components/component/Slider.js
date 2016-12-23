@@ -7,13 +7,13 @@ import Arrow from './Arrow';
 export default class Slider extends Component {
     static defaultProps = {
         name      : '',
-        data      : [],
+        data      : {},
         gotoId    : 0
     }
     static PropTypes = {
         name      : PropTypes.string.isRequired,
         changeId  : PropTypes.func.isRequired,
-        data      : PropTypes.array,
+        data      : PropTypes.object.isRequired,
         gotoId    : PropTypes.number,
         isDisabled: PropTypes.bool
     }
@@ -60,7 +60,7 @@ export default class Slider extends Component {
         return(
             <Slicker ref='slider' {...settings}>
                 {
-                    data.map((val, index) => (
+                    data[name].map((val, index) => (
                         <div 
                             data-index={index} 
                             key={name + index} 
@@ -76,18 +76,18 @@ export default class Slider extends Component {
         const { name, isDisabled } = this.props;
         return (
             <div className="scroll-wrap">
-                <h2>{ name }</h2>
+                <h2>{name}</h2>
                 <div className="control-wrap">
                     <Arrow 
-                        onClick={this._prev} 
-                        type='left' 
+                        type='left'
+                        onClick={this._prev}
                         isDisabled={isDisabled}/>
                     <div className="touchcarousel-container">
                         {this._renderChildren()}
                     </div>
                     <Arrow 
+                        type='right'
                         onClick={this._next} 
-                        type='right' 
                         isDisabled={isDisabled}/>
                 </div>
             </div>

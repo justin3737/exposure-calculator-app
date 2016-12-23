@@ -27,17 +27,17 @@ class Calculator extends Component {
                 <Slider 
                     name="Shutter" 
                     changeId={this._changeId} 
-                    data={expdata.shutter} 
-                    isDisabled={lock}
-                    gotoId={gotoId}/>
+                    data={expdata}
+                    gotoId={gotoId}
+                    isDisabled={lock}/>
                 <Slider 
                     name="ISO" 
                     changeId={this._changeId} 
-                    data={expdata.iso} />
+                    data={expdata} />
                 <Slider 
                     name="Aperture" 
                     changeId={this._changeId} 
-                    data={expdata.aperture} />
+                    data={expdata} />
                 <Footer 
                     lock={lock} 
                     onClick={this._onToggleLockBtn} />

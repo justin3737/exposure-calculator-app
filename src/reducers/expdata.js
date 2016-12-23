@@ -1,5 +1,5 @@
 let expdata = {
-    aperture: [
+    Aperture: [
         "--",
         "F1.0",
         "F1.4",
@@ -16,7 +16,7 @@ let expdata = {
         "F64",
         "F90"
     ],
-    iso: [
+    ISO: [
         "--",
         "50",
         "100",
@@ -33,7 +33,7 @@ let expdata = {
         "204800",
         "409600"
     ],
-    shutter: [
+    Shutter: [
         "--",
         "1/8000",
         "1/4000",
