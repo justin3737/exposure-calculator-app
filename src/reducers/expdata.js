@@ -1,6 +1,5 @@
 let expdata = {
     Aperture: [
-        "--",
         "F1.0",
         "F1.4",
         "F2.0",
@@ -17,7 +16,6 @@ let expdata = {
         "F90"
     ],
     ISO: [
-        "--",
         "50",
         "100",
         "200",
@@ -34,7 +32,6 @@ let expdata = {
         "409600"
     ],
     Shutter: [
-        "--",
         "1/8000",
         "1/4000",
         "1/2000",
@@ -63,7 +60,8 @@ let expdata = {
         "1hr",
         "2hr",
         "4hr",
-        "8hr"
-    ]   
+        "8hr",
+        "15hr"
+    ]
 };
 export default expdata;

@@ -9,6 +9,8 @@ import Header from '../component/Header';
 import Slider from '../component/Slider';
 import Footer from '../component/Footer';
 
+import * as helps from '../../helper/index';
+
 class Calculator extends Component {
     constructor() {
         super();
@@ -21,6 +23,7 @@ class Calculator extends Component {
     }
     render() {
         let { lock, expdata, exp } = this.props;
+        console.log(helps.countEV(exp));
         return (
             <div id="app-wrap" className="container">
                 <Header />

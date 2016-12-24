@@ -2,6 +2,7 @@ import * as types from '../constants/ActionTypes';
 import expdata from './expdata';
 
 let initialState = {
+    ev        : 0,
     lock      : false,
     expdata,
     exp : {

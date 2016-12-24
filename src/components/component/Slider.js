@@ -6,9 +6,10 @@ import Arrow from './Arrow';
 
 export default class Slider extends Component {
     static defaultProps = {
-        name: '',
-        data: {},
-        exp : {}
+        name      : '',
+        data      : {},
+        exp       : {},
+        isDisabled: false
     }
     static PropTypes = {
         name      : PropTypes.string.isRequired,
