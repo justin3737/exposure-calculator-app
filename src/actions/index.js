@@ -11,4 +11,4 @@ export const gotoSlick = (id) => {
         type: types.CHANGE_SLICK_ID,
         id
     };
-}
+};

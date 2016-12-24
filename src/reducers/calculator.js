@@ -1,8 +1,9 @@
 import * as types from '../constants/ActionTypes';
+import * as helps from '../helper/index';
 import expdata from './expdata';
 
 let initialState = {
-    ev        : 0,
+    ev        : 13,
     lock      : false,
     expdata,
     exp : {
@@ -20,15 +21,17 @@ const calculator = (state = initialState, action) => {
                 lock  : !state.lock
             };
         case types.CHANGE_SLICK_ID:
-            let arr = action.id.split('_'),
+            let arr  = action.id.split('_'),
                 name = arr[0],
-                val = parseInt(arr[1],10);
-            return {
-                ...state,
-                exp: {
+                val  = parseInt(arr[1],10),
+                _exp = {
                     ...state.exp,
                     [name]: val
-                }
+                };
+            return {
+                ...state,
+                exp: _exp,
+                ev: helps.countEV(_exp)
             };
         default:
             return state;

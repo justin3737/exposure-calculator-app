@@ -9,8 +9,6 @@ import Header from '../component/Header';
 import Slider from '../component/Slider';
 import Footer from '../component/Footer';
 
-import * as helps from '../../helper/index';
-
 class Calculator extends Component {
     constructor() {
         super();
@@ -22,8 +20,7 @@ class Calculator extends Component {
         this.props.gotoSlick(id);
     }
     render() {
-        let { lock, expdata, exp } = this.props;
-        console.log(helps.countEV(exp));
+        let { lock, expdata, exp, ev } = this.props;
         return (
             <div id="app-wrap" className="container">
                 <Header />
@@ -54,14 +51,16 @@ Calculator.propTypes = {
     toggleLock : PropTypes.func.isRequired,
     gotoSlick  : PropTypes.func.isRequired,
     expdata    : PropTypes.object.isRequired,
-    exp        : PropTypes.object.isRequired
+    exp        : PropTypes.object.isRequired,
+    ev         : PropTypes.number
 };
 
 export default connect(
     state => ({
+        expdata: state.calculator.expdata,
         lock   : state.calculator.lock,
         exp    : state.calculator.exp,
-        expdata: state.calculator.expdata
+        ev     : state.calculator.ev
     }),
     dispatch => bindActionCreators({
         toggleLock,
