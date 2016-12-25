@@ -40,27 +40,26 @@ export default class Slider extends Component {
                 speed: 350,
                 slidesToShow: 1,
                 slidesToScroll: 1,
-                //slickGoTo:exp[name],
+                slickGoTo:exp[name],
                 beforeChange : function (currentSlide, nextSlide) {
-                    if (_this.props.isDisabled && _this._rollback === -1) {
-                        _this._rollback = currentSlide;
-                    }
+                    // if (_this.props.isDisabled && _this._rollback === -1) {
+                    //     _this._rollback = currentSlide;
+                    // }
                 },
                 afterChange: function (currentSlide, nextSlide) {
-                    if (_this.props.isDisabled && _this._rollback !== -1) {
-                        _this._goto(_this._rollback);
-                    }
+                    // if (_this.props.isDisabled && _this._rollback !== -1) {
+                    //     _this._goto(_this._rollback);
+                    // }
                     if (!_this.props.isDisabled) 
                         changeId(name + '_' + currentSlide);   
                 }  
             };
-        _this._rollback = -1; 
+        //_this._rollback = -1; 
         return(
             <Slicker ref='slider' {...settings}>
                 {
                     data[name].map((val, index) => (
-                        <div 
-                            data-index={index} 
+                        <div data-index={index} 
                             key={name + index} 
                             className="item">
                             {val}
@@ -76,15 +75,13 @@ export default class Slider extends Component {
             <div className="scroll-wrap">
                 <h2>{name}</h2>
                 <div className="control-wrap">
-                    <Arrow 
-                        type='left'
+                    <Arrow type='left'
                         onClick={this._prev}
                         isDisabled={isDisabled}/>
                     <div className="touchcarousel-container">
                         {this._renderChildren()}
                     </div>
-                    <Arrow 
-                        type='right'
+                    <Arrow type='right'
                         onClick={this._next} 
                         isDisabled={isDisabled}/>
                 </div>

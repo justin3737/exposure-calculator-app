@@ -24,22 +24,18 @@ class Calculator extends Component {
         return (
             <div id="app-wrap" className="container">
                 <Header />
-                <Slider 
-                    name="Shutter" 
-                    changeId={this._changeId} 
+                <Slider name="Shutter" 
+                    changeId={this._changeId}
                     data={expdata}
                     exp={exp}
                     isDisabled={lock}/>
-                <Slider 
-                    name="ISO" 
+                <Slider name="ISO" 
                     changeId={this._changeId}
                     data={expdata} />
-                <Slider 
-                    name="Aperture" 
+                <Slider name="Aperture" 
                     changeId={this._changeId} 
                     data={expdata} />
-                <Footer 
-                    lock={lock} 
+                <Footer lock={lock} 
                     onClick={this._onToggleLockBtn} />
             </div>
         );
