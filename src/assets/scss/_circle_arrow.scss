@@ -25,9 +25,9 @@
 		@include opacity(0.3);
 	}
 
-	&.is-disabled:hover {
-		transform: scale(1);
-	}
+	// &.is-disabled:hover {
+	// 	transform: scale(1);
+	// }
 }
 
 .btn-arrow.arrow-left:before {

@@ -22,39 +22,34 @@ export default class Slider extends Component {
         super();
     }
     _prev = () => {
+        if (this.props.isDisabled) return;
         this.refs.slider.slickPrev();
     }
     _next = () => {
+        if (this.props.isDisabled) return;
         this.refs.slider.slickNext();
     }
     _goto = (id) => {
         this.refs.slider.slickGoTo(id);
     }
     _renderChildren = () => {
-        const { name, data, changeId, exp } = this.props;
+        const { name, data, changeId, exp, isDisabled } = this.props;
         let _this = this,
+            currId = exp[name],
             settings = {
                 arrows: false,
                 dots: false,
                 infinite: false,
+                draggable: (isDisabled)?false:true,
                 speed: 350,
                 slidesToShow: 1,
                 slidesToScroll: 1,
-                slickGoTo:exp[name],
-                beforeChange : function (currentSlide, nextSlide) {
-                    // if (_this.props.isDisabled && _this._rollback === -1) {
-                    //     _this._rollback = currentSlide;
-                    // }
-                },
-                afterChange: function (currentSlide, nextSlide) {
-                    // if (_this.props.isDisabled && _this._rollback !== -1) {
-                    //     _this._goto(_this._rollback);
-                    // }
-                    if (!_this.props.isDisabled) 
+                slickGoTo: exp[name],
+                afterChange: function (currentSlide) {
+                    if (!isDisabled) 
                         changeId(name + '_' + currentSlide);   
                 }  
             };
-        //_this._rollback = -1; 
         return(
             <Slicker ref='slider' {...settings}>
                 {
