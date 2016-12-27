@@ -16,7 +16,6 @@
 	};
 
 	&:hover, &.is-active {
-		transform: scale(1.2);
 		@include opacity(1);
 	}
 
@@ -24,10 +23,6 @@
         cursor: default;
 		@include opacity(0.3);
 	}
-
-	// &.is-disabled:hover {
-	// 	transform: scale(1);
-	// }
 }
 
 .btn-arrow.arrow-left:before {

@@ -40,7 +40,8 @@ export default class Slider extends Component {
                 arrows: false,
                 dots: false,
                 infinite: false,
-                draggable: (isDisabled)?false:true,
+                draggable: (isDisabled)?false:true, //for window drag event
+                swipe: (isDisabled)?false:true,     //for mobile swipe event
                 speed: 350,
                 slidesToShow: 1,
                 slidesToScroll: 1,
