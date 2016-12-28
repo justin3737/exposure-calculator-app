@@ -59,7 +59,7 @@ body {
 
     .scroll-wrap {
         padding: 20px 0;
-        height: 22%;
+        height: 18%;
         @include box-sizing(border-box);
     }
 
@@ -85,17 +85,15 @@ body {
     }
     
     .header {
-        padding-top: 10px;
-        height: 22%;
+        padding-top: 50px;
+        height: 30%;
         @include box-sizing(border-box);
     }
 
     .footer {
         width: 100%;
         @include box-sizing(border-box);
-        @include for-size(iphone6-only) {
-            padding-top: 20px;
-        }
+        padding-top: 20px;
     }
 
     .btn {
