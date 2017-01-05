@@ -9,7 +9,7 @@ Exposure calculator app is a utility that helps you determine the correct exposu
 <img src="https://raw.githubusercontent.com/justin3737/exposure-calculator-app/ecf147e4f30060da06fc6d42e0e6a3fd500f796a/src/assets/sketch/main.png" width="375">
 
 ### Intro:
-<img src="https://raw.githubusercontent.com/justin3737/exposure-calculator-app/ecf147e4f30060da06fc6d42e0e6a3fd500f796a/src/assets/sketch/intro.png" width="375">
-<img src="https://raw.githubusercontent.com/justin3737/exposure-calculator-app/ecf147e4f30060da06fc6d42e0e6a3fd500f796a/src/assets/sketch/intro%202.png" width="375">
-<img src="https://raw.githubusercontent.com/justin3737/exposure-calculator-app/ecf147e4f30060da06fc6d42e0e6a3fd500f796a/src/assets/sketch/intro%203.png" width="375">
-<img src="https://raw.githubusercontent.com/justin3737/exposure-calculator-app/ecf147e4f30060da06fc6d42e0e6a3fd500f796a/src/assets/sketch/intro%204.png" width="375">
+<img src="https://raw.githubusercontent.com/justin3737/exposure-calculator-app/ecf147e4f30060da06fc6d42e0e6a3fd500f796a/src/assets/sketch/intro.png" width="210">
+<img src="https://raw.githubusercontent.com/justin3737/exposure-calculator-app/ecf147e4f30060da06fc6d42e0e6a3fd500f796a/src/assets/sketch/intro%202.png" width="210">
+<img src="https://raw.githubusercontent.com/justin3737/exposure-calculator-app/ecf147e4f30060da06fc6d42e0e6a3fd500f796a/src/assets/sketch/intro%203.png" width="210">
+<img src="https://raw.githubusercontent.com/justin3737/exposure-calculator-app/ecf147e4f30060da06fc6d42e0e6a3fd500f796a/src/assets/sketch/intro%204.png" width="210">
