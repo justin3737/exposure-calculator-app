@@ -12,3 +12,9 @@ export const gotoSlick = (id) => {
         id
     };
 };
+
+export const toggleInfo = () => {
+    return {
+        type: types.TOGGLE_INFO
+    };
+};

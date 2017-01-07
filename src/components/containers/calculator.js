@@ -4,7 +4,7 @@ import { connect } from 'react-redux';
 
 import classnames from 'classnames';
 
-import { toggleLock, gotoSlick } from 'actions';
+import { toggleInfo, toggleLock, gotoSlick } from 'actions';
 import Header from '../component/Header';
 import Slider from '../component/Slider';
 import Footer from '../component/Footer';
@@ -19,11 +19,14 @@ class Calculator extends Component {
     _changeId = (id) => {
         this.props.gotoSlick(id);
     }
+    _onIconClick = () => {
+        this.props.toggleInfo();
+    }
     render() {
         let { lock, expdata, exp, ev } = this.props;
         return (
             <div id="app-wrap" className="container">
-                <Header />
+                <Header onClick={this._onIconClick}/>
                 <Slider name="Shutter" 
                     changeId={this._changeId}
                     data={expdata}
@@ -44,6 +47,7 @@ class Calculator extends Component {
 
 Calculator.propTypes = {
     lock       : PropTypes.bool.isRequired,
+    toggleInfo : PropTypes.func.isRequired,
     toggleLock : PropTypes.func.isRequired,
     gotoSlick  : PropTypes.func.isRequired,
     expdata    : PropTypes.object.isRequired,
@@ -59,6 +63,7 @@ export default connect(
         ev     : state.calculator.ev
     }),
     dispatch => bindActionCreators({
+        toggleInfo,
         toggleLock,
         gotoSlick
     }, dispatch)

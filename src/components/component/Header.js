@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import classnames from 'classnames';
+import Icon from './Icon';
 
 export default class Header extends Component {
     constructor() {
@@ -8,6 +9,7 @@ export default class Header extends Component {
     render() {
         return (
             <div className="header">
+                <Icon name='i-info' onClick={this.props.onClick}/>
                 <h1>exposure-calculator-app</h1>
                 <i className="time"></i>
             </div>

@@ -162,6 +162,33 @@ body {
         }
     }
 
+    a.icon-wrap {
+        width: 40px;
+        height: 40px;
+        position: absolute;
+        margin-top: -50px;
+        display: inline-block;
+        cursor: pointer;
+        @include opacity(0.8);
+    }   
+
+    i.icon {
+        width: inherit;
+        height: inherit;
+        display: inline-block;
+        position: relative;
+        background-repeat: no-repeat;
+        background-size: 50%;
+        background-position: 9px 7px;
+        border: 1px solid white;
+        @include border-radius(50%);
+        @include box-sizing(border-box);
+    }
+
+        .i-info {
+            background-image: url(../img/icon_info.png);
+        }
+
     i.time {
         margin: 0 auto;
         display: block;

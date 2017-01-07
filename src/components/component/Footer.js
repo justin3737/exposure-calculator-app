@@ -3,7 +3,7 @@ import classnames from 'classnames';
 
 export default class Footer extends Component {
     static defaultProps = {
-        lock      : false
+        lock   : false
     }
     static PropTypes = {
         lock   : PropTypes.bool,
