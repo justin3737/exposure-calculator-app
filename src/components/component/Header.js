@@ -1,5 +1,4 @@
 import React, { Component } from 'react';
-import classnames from 'classnames';
 import Icon from './Icon';
 
 export default class Header extends Component {

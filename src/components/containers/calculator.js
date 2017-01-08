@@ -2,9 +2,8 @@ import React, { PropTypes, Component } from 'react';
 import { bindActionCreators } from 'redux';
 import { connect } from 'react-redux';
 
-import classnames from 'classnames';
-
 import { toggleInfo, toggleLock, gotoSlick } from 'actions';
+import Information from './Information';
 import Header from '../component/Header';
 import Slider from '../component/Slider';
 import Footer from '../component/Footer';
@@ -23,9 +22,10 @@ class Calculator extends Component {
         this.props.toggleInfo();
     }
     render() {
-        let { lock, expdata, exp, ev } = this.props;
+        let { lock, expdata, exp, ev, showInfo } = this.props;
         return (
             <div id="app-wrap" className="container">
+                <Information isShow={showInfo} />
                 <Header onClick={this._onIconClick}/>
                 <Slider name="Shutter" 
                     changeId={this._changeId}
@@ -46,6 +46,7 @@ class Calculator extends Component {
 };
 
 Calculator.propTypes = {
+    showInfo   : PropTypes.bool.isRequired,
     lock       : PropTypes.bool.isRequired,
     toggleInfo : PropTypes.func.isRequired,
     toggleLock : PropTypes.func.isRequired,
@@ -57,10 +58,11 @@ Calculator.propTypes = {
 
 export default connect(
     state => ({
-        expdata: state.calculator.expdata,
-        lock   : state.calculator.lock,
-        exp    : state.calculator.exp,
-        ev     : state.calculator.ev
+        expdata : state.calculator.expdata,
+        lock    : state.calculator.lock,
+        exp     : state.calculator.exp,
+        ev      : state.calculator.ev,
+        showInfo: state.information.showInfo
     }),
     dispatch => bindActionCreators({
         toggleInfo,
