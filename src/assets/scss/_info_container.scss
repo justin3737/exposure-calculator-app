@@ -1,0 +1,25 @@
+@import "compass/css3";
+
+@import "global_color";
+@import "media_query";
+
+.info-container {
+    position: absolute;
+    width: inherit;
+    height: inherit;
+    top: 0;
+    left: 0;
+    z-index: 1;
+    opacity: .85;
+    background-color: $cover;
+    padding: 20px;
+    @include box-sizing(border-box);
+    @include for-size(iphone6-only) {
+        padding: 30px;
+    }
+}
+
+    .i-close {
+        background-image: url(../img/icon_remove.png);
+        background-position: 10px 10px;
+    }

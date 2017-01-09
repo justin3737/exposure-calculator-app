@@ -21,11 +21,14 @@ class Calculator extends Component {
     _onIconClick = () => {
         this.props.toggleInfo();
     }
+    _onClose = () => {
+        this.props.toggleInfo();
+    }
     render() {
         let { lock, expdata, exp, ev, showInfo } = this.props;
         return (
             <div id="app-wrap" className="container">
-                <Information isShow={showInfo} />
+                <Information isShow={showInfo} onClose={this._onClose}/>
                 <Header onClick={this._onIconClick}/>
                 <Slider name="Shutter" 
                     changeId={this._changeId}

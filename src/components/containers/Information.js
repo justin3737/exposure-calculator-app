@@ -1,14 +1,16 @@
 import React, { PropTypes, Component } from 'react';
 import classnames from 'classnames';
 
+import Icon from '../component/Icon';
+
 export default class Information extends Component {
     constructor() {
         super();
     }
     render() {
         return (
-            <div className={classnames({'hide': !this.props.isShow})}>
-                info container
+            <div className={classnames({'info-container':true, 'hide': !this.props.isShow})}>
+                <Icon name="i-close" onClick={this.props.onClose}/>
             </div>
         );
     };
