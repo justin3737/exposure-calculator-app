@@ -9,7 +9,7 @@ export default class Information extends Component {
     }
     render() {
         return (
-            <div className={classnames({'info-container':true, 'hide': !this.props.isShow})}>
+            <div className={classnames({'info-container':true, 'is-open': this.props.isShow})}>
                 <Icon name="i-close" onClick={this.props.onClose}/>
             </div>
         );

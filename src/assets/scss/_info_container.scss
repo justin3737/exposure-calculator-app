@@ -1,4 +1,5 @@
 @import "compass/css3";
+@import "compass/css3/transition";
 
 @import "global_color";
 @import "media_query";
@@ -7,15 +8,22 @@
     position: absolute;
     width: inherit;
     height: inherit;
-    top: 0;
+    top: -150%;
     left: 0;
     z-index: 1;
     opacity: .85;
     background-color: $cover;
     padding: 20px;
+    @include transition-property(top);
+    @include transition-duration(0.5s);
+    @include transition-timing-function(ease-out);
     @include box-sizing(border-box);
     @include for-size(iphone6-only) {
         padding: 30px;
+    }
+
+    &.is-open {
+        top: 0px;
     }
 }
 
