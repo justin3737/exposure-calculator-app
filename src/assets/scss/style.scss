@@ -25,6 +25,7 @@ html {
 }
 
 body {
+    font-family: AppleGothic,"微軟正黑體";
     background: darken($bg, 25%);
     width: 100%;
     height: 100%;
@@ -62,12 +63,35 @@ body {
             max-height: 600px;
             margin-top: -300px !important ; 
         }
+
+        i.time {
+            margin: 0 auto;
+            display: block;
+            text-indent: -9999px;
+            width: 120px;
+            height: 120px;
+            background: url(../img/time.png);
+            background-size: 120px;
+            @include opacity(0.3);
+        }
+
+        h1 {
+            display: none;
+            position: absolute;
+        }
     }
 
     .scroll-wrap {
         padding: 20px 0;
         height: 18%;
         @include box-sizing(border-box);
+
+        h2 {
+            font-size: 0.875em;
+            line-height: 1.5rem;
+            color:$white;
+            text-transform: uppercase;
+        }
     }
 
     .control-wrap {
@@ -154,7 +178,7 @@ body {
             display: inline-block;
             position: relative;
             top: 50%;
-            margin-top: -0.5em;
+            margin-top: -0.35em;
         }
     }
     .touchcarousel-container {
@@ -162,7 +186,6 @@ body {
     }
     .touchcarousel-container .item {
         font-size: 3em;
-        font-family: AppleGothic;
         color: $white;
 
         @include for-size(phone-only) {
@@ -199,26 +222,4 @@ body {
             background-position: 9px 7px;
         }
 
-    i.time {
-        margin: 0 auto;
-        display: block;
-        text-indent: -9999px;
-        width: 120px;
-        height: 120px;
-        background: url(../img/time.png);
-        background-size: 120px;
-        @include opacity(0.3);
-    }
-
-    h1 {
-        display: none;
-        position: absolute;
-    }
-
-    h2 {
-        font-family: AppleGothic,"微軟正黑體";
-        font-size: 0.875em;
-        line-height: 1.5rem;
-        color:$white;
-        text-transform: uppercase;
-    }
+    
