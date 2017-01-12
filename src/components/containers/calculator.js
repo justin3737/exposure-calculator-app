@@ -25,11 +25,16 @@ class Calculator extends Component {
         this.props.toggleInfo();
     }
     render() {
-        let { lock, expdata, exp, ev, showInfo } = this.props;
+        let { lock, expdata, exp, ev, showInfo, infodata } = this.props;
         return (
             <div id="app-wrap" className="container">
-                <Information isShow={showInfo} onClose={this._onClose}/>
-                <Header onClick={this._onIconClick}/>
+                <Information 
+                    data={infodata}
+                    isShow={showInfo} 
+                    onClose={this._onClose}/>
+                <Header 
+                    onClick={this._onIconClick} 
+                    showInfoIcon={!showInfo}/>
                 <Slider name="Shutter" 
                     changeId={this._changeId}
                     data={expdata}
@@ -54,6 +59,7 @@ Calculator.propTypes = {
     toggleInfo : PropTypes.func.isRequired,
     toggleLock : PropTypes.func.isRequired,
     gotoSlick  : PropTypes.func.isRequired,
+    infodata   : PropTypes.array.isRequired,
     expdata    : PropTypes.object.isRequired,
     exp        : PropTypes.object.isRequired,
     ev         : PropTypes.number
@@ -65,6 +71,7 @@ export default connect(
         lock    : state.calculator.lock,
         exp     : state.calculator.exp,
         ev      : state.calculator.ev,
+        infodata: state.information.infodata,
         showInfo: state.information.showInfo
     }),
     dispatch => bindActionCreators({

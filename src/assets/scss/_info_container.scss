@@ -16,7 +16,7 @@
     @include opacity(0);
     @include transition-property(all);
     @include transition-duration(0.5s);
-    @include transition-timing-function(ease-out);
+    @include transition-timing-function(ease-in-out);
     @include box-sizing(border-box);
     @include for-size(iphone6-only) {
         padding: 30px;

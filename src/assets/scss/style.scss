@@ -3,6 +3,7 @@
 
 //import slick styles
 @import "../../../node_modules/slick-carousel/slick/slick.scss";
+@import "slick_dot";
 
 //common
 @import "global_color";
@@ -32,7 +33,7 @@ body {
 }
 
 .hide {
-    display:none;
+    display:none !important;
 }
 
 #root, #root > div {
@@ -52,174 +53,197 @@ body {
         padding: 30px;
     }
 }
-    .container {
-        user-select: none;
-        @include for-size(phone-only) {
-            max-width: 100%;
-        }
-        @include for-size(tablet-portrait-up) {
-            top: 50%;
-            max-width: 320px;
-            max-height: 600px;
-            margin-top: -300px !important ; 
-        }
-
-        i.time {
-            margin: 0 auto;
-            display: block;
-            text-indent: -9999px;
-            width: 120px;
-            height: 120px;
-            background: url(../img/time.png);
-            background-size: 120px;
-            @include opacity(0.3);
-        }
-
-        h1 {
-            display: none;
-            position: absolute;
-        }
+.container {
+    user-select: none;
+    @include for-size(phone-only) {
+        max-width: 100%;
+    }
+    @include for-size(tablet-portrait-up) {
+        top: 50%;
+        max-width: 320px;
+        max-height: 600px;
+        margin-top: -300px !important ; 
     }
 
-    .scroll-wrap {
-        padding: 20px 0;
-        height: 18%;
-        @include box-sizing(border-box);
-
-        h2 {
-            font-size: 0.875em;
-            line-height: 1.5rem;
-            color:$white;
-            text-transform: uppercase;
-        }
+    i.time {
+        margin: 0 auto;
+        display: block;
+        text-indent: -9999px;
+        width: 120px;
+        height: 120px;
+        background: url(../img/time.png);
+        background-size: 120px;
+        @include opacity(0.3);
     }
 
-    .control-wrap {
-        display: flex;
-        flex-direction: row;
-        
-        @include for-size(phone-only) {
-            align-items: stretch;
-        }
-        @include for-size(tablet-portrait-up) {
-            align-items: stretch;
-        }
-        
-        & .touchcarousel-container {
-            flex:1;
-        }
+    h1 {
+        display: none;
+        position: absolute;
+    }
+}
 
-        & .item {
-            width: 100%;
-            text-align: center;
-        }
+.scroll-wrap {
+    padding: 20px 0;
+    height: 18%;
+    @include box-sizing(border-box);
+
+    h2 {
+        font-size: 0.875em;
+        line-height: 1.5rem;
+        color:$white;
+        text-transform: uppercase;
+    }
+}
+
+.control-wrap {
+    display: flex;
+    flex-direction: row;
+    
+    @include for-size(phone-only) {
+        align-items: stretch;
+    }
+    @include for-size(tablet-portrait-up) {
+        align-items: stretch;
     }
     
-    .header {
-        padding-top: 50px;
-        height: 30%;
-        @include box-sizing(border-box);
+    & .touchcarousel-container {
+        flex:1;
     }
 
-        .header > a.icon-wrap {
-            margin-top: -50px;
-        }
-
-    .footer {
+    & .item {
         width: 100%;
-        @include box-sizing(border-box);
-        padding-top: 20px;
-    }
-
-    .btn {
-        width: 44px;
-        height: 44px;
-        display: inline-block;
-        text-decoration: none;
-        
-        &.btn-arrow:before {
-            border-top:2px solid $bg;
-            border-right:2px solid $bg;
-        }
-        
-        @include for-size(iphone6-only) {
-            @include scale(1.2);
-            &.arrow-left {
-                @include transform-origin(left,top);
-            }
-            &.arrow-right {
-                @include transform-origin(right,top);
-            }
-        }
-    }
-
-    .btn-full {
-        width: 100%;
-        height: 54px;
-        border:2px solid $white;
-        color:$white;
         text-align: center;
-        font-size: 1.5em;
-        letter-spacing: -1px;
-        text-transform: uppercase;
-        @include box-sizing(border-box);
-        @include border-radius(45px);
-
-        &.is-active {
-            color: $bg;
-            background-color: $white;
-        };
-
-        @include for-size(iphone6-only) {
-            @include scale(1);
-        }
-
-        span {
-            display: inline-block;
-            position: relative;
-            top: 50%;
-            margin-top: -0.35em;
-        }
     }
-    .touchcarousel-container {
-        padding-top: 0.3125em;
-    }
-    .touchcarousel-container .item {
-        font-size: 3em;
-        color: $white;
+}
 
-        @include for-size(phone-only) {
-            font-size: 2.75em;
-        }
-        @include for-size(tablet-portrait-up) {
-            font-size: 2.85em;
-        }
+.header {
+    padding-top: 50px;
+    height: 30%;
+    @include box-sizing(border-box);
+}
+
+    .header > a.icon-wrap {
+        margin-top: -50px;
     }
 
-    a.icon-wrap {
-        width: 40px;
-        height: 40px;
-        position: absolute;
-        display: inline-block;
-        cursor: pointer;
-        @include opacity(0.8);
-    }   
+.footer {
+    width: 100%;
+    @include box-sizing(border-box);
+    padding-top: 20px;
+}
 
-    i.icon {
-        width: inherit;
-        height: inherit;
+.btn {
+    width: 44px;
+    height: 44px;
+    display: inline-block;
+    text-decoration: none;
+    
+    &.btn-arrow:before {
+        border-top:2px solid $bg;
+        border-right:2px solid $bg;
+    }
+    
+    @include for-size(iphone6-only) {
+        @include scale(1.2);
+        &.arrow-left {
+            @include transform-origin(left,top);
+        }
+        &.arrow-right {
+            @include transform-origin(right,top);
+        }
+    }
+}
+
+.btn-full {
+    width: 100%;
+    height: 54px;
+    border:2px solid $white;
+    color:$white;
+    text-align: center;
+    font-size: 1.5em;
+    letter-spacing: -1px;
+    text-transform: uppercase;
+    @include box-sizing(border-box);
+    @include border-radius(45px);
+
+    &.is-active {
+        color: $bg;
+        background-color: $white;
+    };
+
+    @include for-size(iphone6-only) {
+        @include scale(1);
+    }
+
+    span {
         display: inline-block;
         position: relative;
-        background-repeat: no-repeat;
-        background-size: 50%;
-        border: 1px solid white;
-        @include border-radius(50%);
-        @include box-sizing(border-box);
+        top: 50%;
+        margin-top: -0.35em;
+    }
+}
+.touchcarousel-container {
+    padding-top: 0.3125em;
+}
+.touchcarousel-container .item {
+    font-size: 3em;
+    color: $white;
+
+    @include for-size(phone-only) {
+        font-size: 2.75em;
+    }
+    @include for-size(tablet-portrait-up) {
+        font-size: 2.85em;
+    }
+}
+
+a.icon-wrap {
+    width: 40px;
+    height: 40px;
+    position: absolute;
+    display: inline-block;
+    cursor: pointer;
+    z-index: 2;
+    @include opacity(0.8);
+}   
+
+i.icon {
+    width: inherit;
+    height: inherit;
+    display: inline-block;
+    position: relative;
+    background-repeat: no-repeat;
+    background-size: 50%;
+    border: 1px solid white;
+    @include border-radius(50%);
+    @include box-sizing(border-box);
+}
+
+    .i-info {
+        background-image: url(../img/icon_info.png);
+        background-position: 9px 7px;
     }
 
-        .i-info {
-            background-image: url(../img/icon_info.png);
-            background-position: 9px 7px;
-        }
+/* slick-dots styles */
 
-    
+.slick-dots {
+    bottom: 3%;
+    position: absolute;
+}
+
+.slick-dots li {
+    margin: 0 10px;
+}
+
+.slick-dots li button{
+    @include scale(2);
+}
+
+.slick-dots li button::before {
+    content: "●"
+}
+
+.slick-dots li button:before,
+.slick-dots li.slick-active button:before {
+    color: white;
+}
