@@ -12,14 +12,14 @@
     left: 0;
     z-index: 2;
     background-color: $cover;
-    padding: 20px;
+    padding: 3.33%;
     @include opacity(0);
     @include transition-property(all);
     @include transition-duration(0.5s);
     @include transition-timing-function(ease-in-out);
     @include box-sizing(border-box);
     @include for-size(iphone6-only) {
-        padding: 30px;
+        padding: 5%;
     }
 
     &.is-open {
@@ -42,7 +42,7 @@
         max-height: 270px;
         background-repeat: no-repeat;
         background-size: 300px;
-        margin: 30px auto;
+        margin: 8% auto;
         background-position:center;
         @include background-size(cover);
         @include border-radius(50%);
@@ -57,14 +57,14 @@
 
     h2 {
         font-size: 1.875em;
-        padding: 0px 15px 20px;
+        padding: 0 2.5% 3.33%;
     }
 
     h3 {
         font-size: 1.5em;
         line-height: 1.6em;
         font-weight: 100;
-        padding: 0px 15px;
+        padding: 0 2.5%;
     }
 
     &.info1 .info-cover{

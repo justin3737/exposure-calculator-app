@@ -23,6 +23,12 @@ html {
     width: 100%;
     height: 100%;
     font-size: 100%;
+    @include for-size(phone-only) {
+        font-size: 80%;
+    }
+    @include for-size(iphone6-only) {
+        font-size: 100%;
+    }
 }
 
 body {

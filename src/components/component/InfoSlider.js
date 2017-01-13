@@ -10,6 +10,10 @@ export default class InfoSlider extends Component {
     constructor() {
         super();
     }
+    componentDidUpdate() {
+        //when updated, go to first view
+        this.refs.slider.slickGoTo(0);  
+    }
     render() {
         const { data } = this.props;
         let settings = {
@@ -23,7 +27,7 @@ export default class InfoSlider extends Component {
             slidesToScroll: 1
         };
         return(
-            <Slicker {...settings}>
+            <Slicker ref="slider" {...settings}>
                 {
                     data.map((val, index) => (
                         <div data-index={index} 
