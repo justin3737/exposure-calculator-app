@@ -24,7 +24,7 @@ html {
     height: 100%;
     font-size: 100%;
     @include for-size(phone-only) {
-        font-size: 80%;
+        font-size: 70%;
     }
     @include for-size(iphone6-only) {
         font-size: 100%;

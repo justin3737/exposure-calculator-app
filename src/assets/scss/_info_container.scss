@@ -61,7 +61,7 @@
     }
 
     h3 {
-        font-size: 1.5em;
+        font-size: 1.25em;
         line-height: 1.6em;
         font-weight: 100;
         padding: 0 2.5%;
@@ -81,5 +81,9 @@
 
     &.info4 .info-cover{
         background-image: url(../img/intro4.png);
+    }
+
+    &.info5 .info-cover{
+        background-image: url(../img/intro1.png);
     }
 }
