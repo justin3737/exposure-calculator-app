@@ -12,7 +12,10 @@ export default class InfoSlider extends Component {
     }
     componentDidUpdate() {
         //when updated, go to first view
-        this.refs.slider.slickGoTo(0);  
+        let _this = this;
+        setTimeout(()=>{
+            _this.refs.slider.slickGoTo(0);  
+        },500);
     }
     render() {
         const { data } = this.props;
