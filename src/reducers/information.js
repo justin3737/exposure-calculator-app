@@ -1,7 +1,7 @@
 import * as types from '../constants/ActionTypes';
 import infodata from './infodata';
 
-let defLanguage  = "ZH_TW",
+let defLanguage  = "EN_US",
     initialState = {
         showInfo: false,
         language: defLanguage,
