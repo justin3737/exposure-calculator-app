@@ -1,11 +1,11 @@
 import * as types from '../constants/ActionTypes';
 import infodata from './infodata';
 
-let defLanguage  = "EN_US",
+let def_Language  = 'ZH-TW',
     initialState = {
         showInfo: false,
-        language: defLanguage,
-        infodata: infodata[defLanguage]
+        language: def_Language,
+        infodata: infodata[def_Language]
     };
 
 const information = (state = initialState, action) => {
@@ -15,6 +15,13 @@ const information = (state = initialState, action) => {
                 ...state,
                 showInfo: !state.showInfo
             };
+        case types.CHANGE_LANGUAGE:
+            let lang = (action.language.toUpperCase()===def_Language)?def_Language:'EN-US';
+            return {
+                ...state,
+                language: lang,
+                infodata: infodata[lang]
+            }
         default:
             return state;
     }

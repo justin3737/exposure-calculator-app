@@ -2,7 +2,7 @@ import React, { PropTypes, Component } from 'react';
 import { bindActionCreators } from 'redux';
 import { connect } from 'react-redux';
 
-import { toggleInfo, toggleLock, gotoSlick } from 'actions';
+import { toggleInfo, toggleLock, gotoSlick, setLanguage } from 'actions';
 import Information from './Information';
 import Header from '../component/Header';
 import Slider from '../component/Slider';
@@ -11,6 +11,9 @@ import Footer from '../component/Footer';
 class Calculator extends Component {
     constructor() {
         super();
+    }
+    componentWillMount() {
+        this.props.setLanguage(navigator.language);
     }
     _onToggleLockBtn = () => {
         this.props.toggleLock();
@@ -59,6 +62,7 @@ Calculator.propTypes = {
     toggleInfo : PropTypes.func.isRequired,
     toggleLock : PropTypes.func.isRequired,
     gotoSlick  : PropTypes.func.isRequired,
+    setLanguage: PropTypes.func.isRequired,
     infodata   : PropTypes.array.isRequired,
     expdata    : PropTypes.object.isRequired,
     exp        : PropTypes.object.isRequired,
@@ -77,6 +81,7 @@ export default connect(
     dispatch => bindActionCreators({
         toggleInfo,
         toggleLock,
-        gotoSlick
+        gotoSlick,
+        setLanguage
     }, dispatch)
 )(Calculator);

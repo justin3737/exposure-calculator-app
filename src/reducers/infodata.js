@@ -1,5 +1,5 @@
 let infodata = {
-    "ZH_TW":[
+    "ZH-TW":[
         {
             "title": "給攝影師：",
             "desc" : "在拍攝長時間曝光的照片時，使用這個網頁版APP可以更方便的換算曝光時間"
@@ -21,7 +21,7 @@ let infodata = {
             "desc" : "愛用這款APP，請在手機桌面上建立捷徑"
         }
     ],
-    "EN_US":[
+    "EN-US":[
         {
             "title": "To Photographers:",
             "desc" : "When taking long exposure photography, use this web app to count shutter speed would be easy."

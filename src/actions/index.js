@@ -18,3 +18,10 @@ export const toggleInfo = () => {
         type: types.TOGGLE_INFO
     };
 };
+
+export const setLanguage = (language) => {
+    return {
+        type: types.CHANGE_LANGUAGE,
+        language
+    };
+};
