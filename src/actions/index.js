@@ -1,8 +1,8 @@
 import * as types from 'constants/ActionTypes';
 
-export const toggleLock = () => {
+export const toggleCount = () => {
     return {
-        type: types.TOGGLE_LOCK
+        type: types.TOGGLE_COUNT
     };
 };
 

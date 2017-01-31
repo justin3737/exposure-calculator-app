@@ -3,7 +3,7 @@ import expdata from './expdata';
 
 let initialState = {
     ev        : 13,
-    lock      : false,
+    count     : false,
     expdata,
     exp : {
         Shutter : 0,
@@ -16,16 +16,16 @@ let initialState = {
 
 const calculator = (state = initialState, action) => {
     switch (action.type) {
-        case types.TOGGLE_LOCK:
+        case types.TOGGLE_COUNT:
             return {
                 ...state,
-                lock  : !state.lock
+                count : !state.count
             };
         case types.CHANGE_SLICK_ID:
             let arr  = action.id.split('_'),
                 name = arr[0],
                 val  = parseInt(arr[1],10);
-            if (!state.lock) {
+            if (!state.count) {
                 let _exp = {
                         ...state.exp,
                         [name]: val

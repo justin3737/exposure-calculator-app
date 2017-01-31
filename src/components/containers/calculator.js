@@ -2,7 +2,7 @@ import React, { PropTypes, Component } from 'react';
 import { bindActionCreators } from 'redux';
 import { connect } from 'react-redux';
 
-import { toggleInfo, toggleLock, gotoSlick, setLanguage } from 'actions';
+import { toggleInfo, toggleCount, gotoSlick, setLanguage } from 'actions';
 import Information from './Information';
 import Header from '../component/Header';
 import Slider from '../component/Slider';
@@ -15,8 +15,8 @@ class Calculator extends Component {
     componentWillMount() {
         this.props.setLanguage(navigator.language);
     }
-    _onToggleLockBtn = () => {
-        this.props.toggleLock();
+    _onToggleCountBtn = () => {
+        this.props.toggleCount();
     }
     _changeId = (id) => {
         this.props.gotoSlick(id);
@@ -28,7 +28,7 @@ class Calculator extends Component {
         this.props.toggleInfo();
     }
     render() {
-        let { lock, expdata, exp, ev, showInfo, infodata } = this.props;
+        let { count, expdata, exp, ev, showInfo, infodata } = this.props;
         return (
             <div id="app-wrap" className="container">
                 <Information 
@@ -42,15 +42,15 @@ class Calculator extends Component {
                     changeId={this._changeId}
                     data={expdata}
                     exp={exp}
-                    isDisabled={lock}/>
+                    isDisabled={count}/>
                 <Slider name="ISO" 
                     changeId={this._changeId}
                     data={expdata} />
                 <Slider name="Aperture" 
                     changeId={this._changeId} 
                     data={expdata} />
-                <Footer lock={lock} 
-                    onClick={this._onToggleLockBtn} />
+                <Footer count={count} 
+                    onClick={this._onToggleCountBtn} />
             </div>
         );
     };
@@ -58,9 +58,9 @@ class Calculator extends Component {
 
 Calculator.propTypes = {
     showInfo   : PropTypes.bool.isRequired,
-    lock       : PropTypes.bool.isRequired,
+    count      : PropTypes.bool.isRequired,
     toggleInfo : PropTypes.func.isRequired,
-    toggleLock : PropTypes.func.isRequired,
+    toggleCount: PropTypes.func.isRequired,
     gotoSlick  : PropTypes.func.isRequired,
     setLanguage: PropTypes.func.isRequired,
     infodata   : PropTypes.array.isRequired,
@@ -72,7 +72,7 @@ Calculator.propTypes = {
 export default connect(
     state => ({
         expdata : state.calculator.expdata,
-        lock    : state.calculator.lock,
+        count   : state.calculator.count,
         exp     : state.calculator.exp,
         ev      : state.calculator.ev,
         infodata: state.information.infodata,
@@ -80,7 +80,7 @@ export default connect(
     }),
     dispatch => bindActionCreators({
         toggleInfo,
-        toggleLock,
+        toggleCount,
         gotoSlick,
         setLanguage
     }, dispatch)
