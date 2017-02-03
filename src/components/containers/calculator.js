@@ -75,8 +75,8 @@ export default connect(
         count   : state.calculator.count,
         exp     : state.calculator.exp,
         ev      : state.calculator.ev,
-        infodata: state.information.infodata,
-        showInfo: state.information.showInfo
+        infodata: state.setting.infodata,
+        showInfo: state.setting.showInfo
     }),
     dispatch => bindActionCreators({
         toggleInfo,

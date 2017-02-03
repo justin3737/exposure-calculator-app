@@ -8,7 +8,7 @@ let def_Language  = 'ZH-TW',
         infodata: infodata[def_Language]
     };
 
-const information = (state = initialState, action) => {
+const setting = (state = initialState, action) => {
     switch (action.type) {
         case types.TOGGLE_INFO:
             return {
@@ -27,4 +27,4 @@ const information = (state = initialState, action) => {
     }
 };
 
-export default information;
+export default setting;

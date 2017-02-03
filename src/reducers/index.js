@@ -1,10 +1,10 @@
 import { combineReducers } from 'redux';
 import calculator from './calculator';
-import information from './information';
+import setting from './setting';
 
 const rootReducer = combineReducers({
     calculator,
-    information
+    setting
 });
 
 export default rootReducer;
